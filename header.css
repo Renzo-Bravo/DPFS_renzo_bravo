@@ -6,8 +6,20 @@
 header {
     background-color: rgb(36, 36, 36);
     padding: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 header .logoPrincipal img {
     width: 40%;
+}
+
+header .navegation ul, li, a{
+    color: white;
+    /*Parametros*/
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    font-size: 16px;
 }
