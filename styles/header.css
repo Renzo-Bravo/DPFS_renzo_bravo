@@ -14,24 +14,11 @@ header {
 
 header .logoPrincipal {
     width: 30%;
+    margin-right: 20%;
 }
 
 header .logoPrincipal img {
     width: 100%;
-}
-
-header .navegation {
-    width: 20%;
-    display: flex;
-    margin-left: 10%;
-    flex-direction: row-reverse;
-}
-
-header .navegation .listIcon{
-    color: white;
-    background: none;
-    border-style: none;
-    font-size: 40px;
 }
 
 header .login {
@@ -54,6 +41,19 @@ header .login .buttonLogin{
 header .login .buttonLogin a{
     text-decoration: none;
     color: white;
+}
+
+header .navegation {
+    width: 14%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+header .navegation .listIcon{
+    color: white;
+    background: none;
+    border-style: none;
+    font-size: 40px;
 }
 
 footer{
