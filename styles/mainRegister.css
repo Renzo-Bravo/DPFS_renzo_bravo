@@ -27,7 +27,7 @@ main {
     margin-bottom: 0;
 }
 
-.formulary #password, #email, #name, #surname{
+.formulary #password, #email, #name, #surname, #date{
     border-radius: 10px;
     width: 94%;
     height: 20px;
@@ -49,9 +49,8 @@ main {
 }
 
 .formulary .check #checkbox{
-    width: 30%;
-    height: 30px;
-    font-size: 20px;
+    width: 15%;
+    height: 27px;
 }
 
 .formulary #input {

@@ -3,32 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/detailProd.css">
+    <link rel="stylesheet" href="./styles/headerIndex.css">
+    <link rel="stylesheet" href="./styles/mainDetailprod.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="./images/F1.svg.png" alt="F1">    
+         <div class="logoPrincipal">
+            <img src="./images/F1.svg.png" alt="F1">
         </div>
 
-        <nav class="menu">
-            <i class="bi bi-list"></i>
-        </nav>
+        <div class="login">
+            <button class="buttonLogin"><a href="login.html">Registrarse</a></button>
+        </div>
 
+        <nav class="navegation">
+            <button class="listIcon">
+                <i class="bi bi-list"></i>
+            </button>
+        </nav>
     </header>
 
     <main>
-        <img src="../DPFS_renzo_bravo/images/ford.jpg" alt="F150">
+        <section class="product">
+            <div class="description">
+                <h2>Buzo Ferrari Temp. 2025</h2>
+            </div>
 
-        <h2>Modelo</h2>
-        <h3>Motores</h3>
-        <ul>
-            <li>Tipo 1</li>
-            <li>Tipo 2</li>
-            <li>Tipo 3</li>
-        </ul>
+            <img src="images/buzo_ferrari.jpg" alt="F150">
+
+            <div class="detail">
+                <p>Buzo oficial Scuderia Ferrari F1, confeccionado en mezcla de algodón y poliéster para máxima comodidad. Diseño en rojo Ferrari con capucha ajustable, bolsillo canguro y logos oficiales del equipo y patrocinadores.</p>
+            </div>
+
+            <button><a href="#">Comprar</a></button>
+            <button><a href="#">Agregar al carrito</a></button>
+        </section>
 
     </main>
 

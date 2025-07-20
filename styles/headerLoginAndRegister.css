@@ -35,7 +35,7 @@ header .logoPrincipal img {
 .navegation nav ul, li, button, a{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     list-style: none;
     text-decoration: none;
