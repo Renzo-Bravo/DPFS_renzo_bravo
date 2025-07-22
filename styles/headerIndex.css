@@ -1,15 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: sans-serif;
     font-size: 16px;
 }
 
 header {
-    background-color: black;
-    padding: 5%;
-    padding-top: 9%;
-    padding-bottom: 9%;
+    background-color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -61,19 +60,16 @@ nav {
     color: black;
 }
 
-/* Ocultamos el checkbox */
 #menu-toggle {
     display: none;
 }
 
-/* Icono hamburguesa */
 .bi-list {
     font-size: 1.8rem;
     cursor: pointer;
-    color: rgb(255, 208, 0);
+    color: black;
 }
 
-/* Cuando el checkbox está activado, mostramos el menú */
 #menu-toggle:checked + .bi-list + .menu {
     display: block;
 }
