@@ -1,12 +1,7 @@
-main {
-    background-color: rgb(63, 61, 61);
-    color: white;
-}
-
 .product .description h2{
     padding: 2% ;
     text-align: center;
-    background-color: rgb(63, 61, 61);
+    background-color: gray;
 }
 
 .product img{
@@ -14,14 +9,20 @@ main {
 }
 
 .product .size{
-    background-color: rgb(36, 36, 36);
     padding: 2%;
+    background-color: gray;
 }
 
 .product .detail{
     padding: 4%;
     text-align: center;
-    background-color: rgb(63, 61, 61);
+    color: white;
+    background-color: black;
+    border-style: solid ;
+    border-left: none;
+    border-right: none;
+    border-width: 20px;
+    border-color: rgb(255, 208, 0);
 }
 
 .product .buttons{
@@ -35,22 +36,89 @@ main {
 .product .buttons a{
     text-decoration: none;
     color: white;
-    width: 100%;
+    background-color: black;
+    width: 80%;
     text-align: center;
-    padding: 4%;
-    background-color: rgb(51, 51, 51);
+    padding: 3%;
+    margin: 4%;
+    border-style: solid;
+    border-color: rgb(255, 208, 0);
+    border-radius: 10px;
+    border-width: 2px;
 }
 
 .product .buttons a:active {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 208, 0);
+    border-color: rgb(255, 208, 0);
+    color: black;
 }
 
-.product .buttons hr{
+.buttons .carrito-btn {
+    width: 80%;
+    padding: 3%;
+    margin: 4px;
+    background: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
     border-style: solid;
-    border-color: white;
-    height: 0.3px;
-    width: 100%;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(255, 208, 0);
 }
+
+#carrito-toggle {
+  display: none;
+}
+
+aside {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 200px;
+  height: 100%;
+  background: black;
+  color: white;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.3s ease;
+  z-index: 100;
+}
+
+#carrito-toggle:checked ~ aside {
+  right: 0;
+}
+
+.cerrar {
+  display: block;
+  margin-bottom: 20px;
+  background: red;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.473);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 50;
+}
+
+#carrito-toggle:checked ~ .overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
 
 
 

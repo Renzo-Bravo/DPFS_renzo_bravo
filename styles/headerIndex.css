@@ -1,18 +1,18 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
 }
 
 header {
-    background-color: rgb(36, 36, 36);
+    background-color: black;
     padding: 5%;
     padding-top: 9%;
     padding-bottom: 9%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -25,41 +25,57 @@ header .logoPrincipal img {
     width: 100%;
 }
 
-header .login{
-    width: 35%;
-}
-
-header .login .buttonLogin{
-    width: 100%;
-    padding: 5%;
-    background-color: rgb(36, 36, 36);
-    border-style: solid;
-    border-color: white;
-    border-radius: 10px;
-}
-
-header .login .buttonLogin a{
-    text-decoration: none;
-    color: white;
-}
-
-header .navegation{
-    width: 15%;
+nav {
     display: flex;
-    flex-direction: row-reverse;
-    margin-left: 5%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white
 }
 
-header .navegation .listIcon{
+.menu {
+    list-style: none;
+    display: none;
+    margin: 0;
+    padding: 0;
+    background: black;
+    top: 60px;
+    position: absolute;
+    left: 0;
     width: 100%;
-    height: 40px;
-    background-color: rgb(36, 36, 36);
-    border: none;
 }
 
-header .navegation .listIcon i{
-    font-size: 30px;
+.menu li {
+    border-top: 1px solid white;
+}
+
+.menu li a {
+    display: block;
     color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.menu li a:hover {
+    background: rgb(255, 208, 0);
+    color: black;
+}
+
+/* Ocultamos el checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Icono hamburguesa */
+.bi-list {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgb(255, 208, 0);
+}
+
+/* Cuando el checkbox está activado, mostramos el menú */
+#menu-toggle:checked + .bi-list + .menu {
+    display: block;
 }
 
 footer{
