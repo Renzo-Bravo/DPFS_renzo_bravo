@@ -32,7 +32,7 @@ main {
     margin-bottom: 0;
 }
 
-.formulary #password, #email, #name, #surname, #date{
+.formulary #password, #email, #name, #surname, #date, #select{
     border-radius: 10px;
     width: 94%;
     height: 20px;
