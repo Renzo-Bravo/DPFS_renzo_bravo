@@ -1,12 +1,12 @@
 footer {
-    background-color: gray;
+    background-color: rgb(153, 153, 153);
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
     border-top: solid;
     border-color: rgb(255, 208, 0);
     border-width: 20px;
-    margin-top: 4%;
+    margin-top: 8%;
 }
 
 .footerHead{
@@ -41,7 +41,7 @@ footer {
 
 .footerHead .socialMedia ul li{
     width: 25%;
-    background-color: grey;
+    background-color: rgb(153, 153, 153);
 }
 
 .footerHead .socialMedia ul li i{

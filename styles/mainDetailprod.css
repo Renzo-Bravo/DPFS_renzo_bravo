@@ -1,7 +1,7 @@
 .product .description h2{
     padding: 2% ;
     text-align: center;
-    background-color: gray;
+    background-color: rgb(153, 153, 153);
 }
 
 .product img{
@@ -10,7 +10,7 @@
 
 .product .size{
     padding: 2%;
-    background-color: gray;
+    background-color: rgb(153, 153, 153);
 }
 
 .product .detail{

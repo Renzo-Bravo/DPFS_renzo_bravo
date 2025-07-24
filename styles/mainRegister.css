@@ -19,6 +19,7 @@ main {
     border-left: none;
     border-right: none;
     border-width: 60px;
+    margin-top: 8%;
 }
 
 .formulary .textLabel{
@@ -32,7 +33,7 @@ main {
     margin-bottom: 0;
 }
 
-.formulary #password, #email, #name, #surname, #date, #select{
+.formulary #password, #email, #name, #surname, #date{
     border-radius: 10px;
     width: 94%;
     height: 20px;
@@ -41,6 +42,14 @@ main {
     margin-bottom: 0;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+#select{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
 }
 
 .formulary .check {
