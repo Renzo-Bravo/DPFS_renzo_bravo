@@ -1,0 +1,165 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    background-color: whitesmoke;
+}
+
+/*Header*/
+header{
+    background-image: url("../images/fondo1.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4%;
+    border-bottom: solid 6px yellow;
+    color: yellow;
+}
+
+header .back{
+    width: 30%;
+}
+
+header .back a i{
+    font-size: 40px;
+    color: yellow;
+}
+/*Header*/
+
+/*Main*/
+
+main{
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .cantProd{
+    width: 90%;
+    margin: 4%;
+    padding: 0 4%;
+    background-color: #ced9e9;
+    border-radius: 10px;
+}
+
+main .cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+main .cards .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4%;
+    width: 100%;
+    border:solid 1px rgb(0, 0, 0, 0.322);
+}
+
+main .cards .card .headCart{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: white;
+}
+
+main .cards .card .headCart .contentCard{
+    width: 30%;
+}
+
+main .cards .card .headCart .contentCard img{
+    width: 100%;
+    margin: 8% 0 8%;
+}
+
+main .cards .card .headCart .titleProduct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+}
+
+main .cards .card .numProd{
+    width: 100%;
+    background-color: #ced9e9;
+}
+
+main .cards .card .numProd p{
+    padding: 1%;
+    text-align: end;
+}
+
+main .value{
+    width: 93%;
+    background-color: #ced9e9;
+    padding: 4%;
+    border-radius: 10px;
+    text-align: end;
+}
+
+/*Main*/
+
+/*Footer*/
+
+footer{
+    background-image: url("../images/fondo1.png");
+    background-size: cover;
+    border-top: solid 6px yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4% 4% 0 4%;
+}
+
+footer .startFoot{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .logo{
+    width: 30%;
+}
+
+footer .logo a img{
+    width: 100%;
+}
+
+footer .socialLinks{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+    
+footer .socialLinks span{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6%;
+}
+
+footer .socialLinks span a{
+    font-size: 200%;
+    color: yellow;
+}
+
+footer .endFoot{
+    width: 100%;
+    padding: 4%;
+    background-color: yellow;
+    text-align: center;
+}
+
+/*Footer*/

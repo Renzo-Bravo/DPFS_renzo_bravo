@@ -1,0 +1,167 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    background-color: whitesmoke;
+}
+
+/*Header*/
+
+header{
+    background-image: url("../images/fondo1.png");
+    background-size: cover;
+    border-bottom: solid 6px yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4%;
+}
+
+header .logo{
+    width: 30%;
+}
+
+header .logo a img{
+    width: 100%;
+}
+
+header .registerAndLoginLink{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+header .registerAndLoginLink a{
+    text-decoration: none;
+    color: black;
+    background-color: yellow;
+    padding: 6%;
+    border-radius: 10px;
+}
+
+/*Header*/
+
+/*Main*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    width: 70%;
+    text-align: center;
+}
+
+form{
+    background-image: url("../images/fondo2.png");
+    background-size: contain;
+    border: solid 2px yellow;
+    width: 90%;
+    padding: 2%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8%;
+}
+
+.textLabel{
+    margin: 2%;
+    color: white;
+}
+
+#name, #surname, #date, #email, #password{
+    width: 90%;
+    border-radius: 10px;
+    margin: 2%;
+    padding: 4%;
+}
+
+#select{
+    width: 98.5%;
+    border-radius: 10px;
+    margin: 2%;
+    padding: 4%;
+}
+
+form a{
+    color: white;
+    margin: 4%;
+}
+
+form .check{
+    color: white;
+    margin: 4%;
+    text-align: center;
+}
+
+#input{
+    width: 100%;
+    border-radius: 10px;
+    margin: 2%;
+    padding: 4%;
+}
+
+/*Main*/
+
+/*Footer*/
+
+footer{
+    background-image: url("../images/fondo1.png");
+    background-size: cover;
+    background-color: black;
+    border-top: solid 6px yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4% 4% 0 4%;
+}
+
+footer .startFoot{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .logo{
+    width: 30%;
+}
+
+footer .logo a img{
+    width: 100%;
+}
+
+footer .socialLinks{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+    
+footer .socialLinks span{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6%;
+}
+
+footer .socialLinks span a{
+    font-size: 200%;
+    color: yellow;
+}
+
+footer .endFoot{
+    width: 100%;
+    padding: 4%;
+    background-color: yellow;
+    text-align: center;
+}
+
+/*Footer*/

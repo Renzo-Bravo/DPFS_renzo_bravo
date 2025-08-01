@@ -3,100 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/logo_40x40_white_bg.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles/headerIndex.css">
-    <link rel="stylesheet" href="styles/mainIndex.css">
-    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="shortcut icon" href="images/cellXpress._logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="views/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>SportBox</title>
+    <title>CellXpress Home</title>
 </head>
 <body>
     <header>
-        <div class="logoPrincipal">
-            <img src="images/logoPrincipal.png" alt="SportBox">
+        <div class="logo">
+            <img src="images/cellXpress._logo.png" alt="logoCellXpress">
         </div>
 
-        <nav>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="bi bi-list"></label>
-            <ul class="menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="login.html">Iniciar sesión</a></li>
-                <li><a href="detailprod.html">Productos</a></li>
-            </ul>
+        <nav class="navegation">
+            <i class="bi bi-list"></i>
         </nav>
     </header>
 
     <main>
-        <section class="heroSection">
-            <img src="images/images.jpeg" alt="product1">
-            50% de Descuento y envio gratis
+        <article class="carrousel">
+            <img src="images/image1.jpg" alt="">
+        </article>
+
+        <section class="moreArticles">
+            <ul>
+                <li>
+                    <img src="images/LogoApple.jpg" alt="logoApple">
+                </li>
+                <li>
+                    <img src="images/LogoMotorola.jpg" alt="logoMotorola">
+                </li>
+                <li>
+                    <img src="images/LogoSamsung.jpg" alt="logoSamsung">
+                </li>
+                <li>
+                    <img src="images/LogoXioami.jpg" alt="logoXiaomi">
+                </li>
+            </ul>
         </section>
 
-        <div class="cart">
-            <p><i class="bi bi-cart-dash"></i>Envios gratis a todo el pais</p>
-        </div>
-
-
-        <section class="products">
-            <article class="card">
-                <div class="cardImg">
-                    <img src="images/celu.jpg" alt="Moto" class="imgProduct">
+        <section class="cards">
+            <h2>Más productos</h2>
+            <div class="card">
+                <div class="contentCard">
+                    <img src="images/auriculares.jpg" alt="auriculares">
                 </div>
-                <div>
-                    <p>Celulares y más</p>
+                <div class="titleProduct">
+                    Auriculares
                 </div>
-            </article>
-    
-            <article class="card">
-                <div class="cardImg">
-                    <img src="images/pelota.jpg" alt="pelota" class="imgProduct">
+            </div>
+            <div class="card">
+                <div class="contentCard">
+                    <img src="images/monitor.jpg" alt="monitor">
                 </div>
-                <div>
-                    <p>Deportes</p>
+                <div class="titleProduct">
+                    Monitores
                 </div>
-            </article>
-    
-            <article class="card">
-                <div class="cardImg">
-                    <img src="images/moda.jpg" alt="moda" class="imgProduct">
+            </div>
+            <div class="card">
+                <div class="contentCard">
+                    <img src="images/notebooks.jpg" alt="notebooks">                    
                 </div>
-                    
-                <div>
-                    <p>Moda</p>
+                <div class="titleProduct">
+                    Notebook
                 </div>
-            </article>
-    
-            <article class="card">
-                <div class="cardImg">
-                    <img src="images/zapatilla.jpg" alt="zapatilla" class="imgProduct">
+            </div>
+            <div class="card">
+                <div class="contentCard">
+                    <img src="images/TV.jpg" alt="TV">
                 </div>
-                <div>
-                    <p>Zapatillas</p>
+                <div class="titleProduct">
+                    TV
                 </div>
-            </article>
+            </div>
         </section>
     </main>
 
     <footer>
-        <section class="footerHead">
-            <div class="logoPrincipal">
-                <img src="images/logoPrincipal.png" alt="SportBox">
+        <div class="startFoot">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/cellXpress._logo.png" alt="logoCellXpress">
+                </a>
             </div>
-            <div class="socialMedia">
-                <ul>
-                    <li><i class="bi bi-facebook"></i></li>
-                    <li><i class="bi bi-instagram"></i></li>
-                    <li><i class="bi bi-whatsapp"></i></li>
-                    <li><i class="bi bi-youtube"></i></li>
-                </ul>
-            </div>
-        </section>
-        
-        <section class="footer">
-            <p>Todos los derechos reservados &copy;</p>
-        </section>
-    </footer>
     
+            <div class="socialLinks">
+                <span>
+                    <a href="#" aria-label="facebook"><i class="bi bi-facebook"></i></a>
+                </span>
+                <span>
+                    <a href="#" aria-label="instagram"><i class="bi bi-instagram"></i></a>
+                </span>
+                <span>
+                    <a href="#" aria-label="whatsapp"><i class="bi bi-whatsapp"></i></a>
+                </span>
+            </div>
+        </div>
+        <div class="endFoot">
+            Todos los Derechos Reservados &copy;
+        </div>
+    </footer>
 </body>
 </html>
