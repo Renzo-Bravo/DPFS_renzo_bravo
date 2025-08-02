@@ -46,4 +46,3 @@ Testeo (Busqueda de errores)
 🩶Gris
 🤍Blanco
 
-pd: En el sprint 2 me hice un enriedo por tratar de experimentar, quería mostrar las dos veriones que conseguí hacer, solo son mobile, alguna que otra página (solo 1 en la carpeta tailwind/login tiene "responsive").
