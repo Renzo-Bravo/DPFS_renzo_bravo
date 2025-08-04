@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/cellXpress._logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="views/LoginAndRegister.css">
+    <link rel="stylesheet" href="../stylesheets/LoginAndRegister.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>CellXpress Login</title>
+    <title>CellXpress Register</title>
 </head>
 
 <body>
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="images/cellXpress._logo.png" alt="logoCellXpress">
+                <img src="../images/cellXpress._logo.png" alt="logoCellXpress">
             </a>
         </div>
 
         <div class="registerAndLoginLink">
-            <a href="register.html">
-                Registrarse
+            <a href="login.html">
+                Log in
             </a>
         </div>
     </header>
@@ -29,16 +29,46 @@
 
         <form action="url" method="get" class="formulary">
             <div class="textLabel">
+                <label for="name">Nombre:</label>
+            </div>
+            <input type="text" id="name" name="name" placeholder="Nombre" required>
+
+            <div class="textLabel">
+                <label for="surname">Apellido:</label>
+            </div>
+            <input type="text" id="surname" name="surname" placeholder="Apellido" required>
+
+            <div class="textLabel">
+                <label for="date">Fecha de nacimiento:</label>
+            </div>
+            <input type="date" id="date" name="date" required>
+
+            <div class="textLabel">
+                <label for="select">Género</label>
+            </div>
+            <select name="select" id="select">
+                <option value="">Seleccionar</option>
+                <option value="1">Otro</option>
+                <option value="2">Hombre</option>
+                <option value="3">Mujer</option>
+            </select>
+
+            <div class="textLabel">
                 <label for="email">Correo electrónico:</label>
             </div>
             <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+            
             <div class="textLabel">
                 <label for="password">Contraseña:</label>
             </div>
             <input type="password" id="password" name="password" placeholder="Contraseña" required>
-            <a href="url">¿Has olvidado la contraseña?</a>
             
-            <button type="submit" id="input">Iniciar sesión</button>
+            <div class="check">
+                <input type="checkbox" id="checkbox" name="checkbox" required>
+                <label for="checkbox">Aceptar terminos y condiciones</label>
+            </div>
+
+            <button type="submit" id="input">Registrarse</button>
         </form>
     </main>
 
@@ -46,7 +76,7 @@
         <div class="startFoot">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/cellXpress._logo.png" alt="logoCellXpress">
+                    <img src="../images/cellXpress._logo.png" alt="logoCellXpress">
                 </a>
             </div>
     

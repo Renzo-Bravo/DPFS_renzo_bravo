@@ -1,0 +1,11 @@
+var express = require('express');
+const productsCtrl = require('../controllers/productsCtrl');
+var router = express.Router();
+
+/* GET Cart page. */
+router.get('/cart',  productsCtrl.cart);
+
+/*Get Detail page.*/
+router.get('/detail', productsCtrl.products);
+
+module.exports = router;
