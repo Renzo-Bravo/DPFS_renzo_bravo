@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "digital",
-=======
   "name": "dpfs-renzo-bravo",
->>>>>>> temporaly
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -14,12 +10,8 @@
     "debug": "~2.6.9",
     "ejs": "^3.1.10",
     "express": "~4.16.1",
-<<<<<<< HEAD
-    "http-errors": "^1.8.1",
-=======
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
->>>>>>> temporaly
     "morgan": "~1.9.1"
   }
 }

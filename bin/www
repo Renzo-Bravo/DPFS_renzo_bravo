@@ -5,11 +5,7 @@
  */
 
 var app = require('../app');
-<<<<<<< HEAD
-var debug = require('debug')('digital:server');
-=======
 var debug = require('debug')('dpfs-renzo-bravo:server');
->>>>>>> temporaly
 var http = require('http');
 
 /**
