@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <h1 class="Editiontitle">Edicion de producto</h1>
+        <h2 class="TitleEdition">Celular Nubia Neo 2 6.7 5G 8GB Ram 256 GB</h2>
+        <section class="formularyEdition1">
+            <div class="imgEdition">
+                <img src="../../images/foto_nubia_neo2_amarillo.webp" alt="CelularNubia">
+            </div>
+            <form action="url" method="get" class="formularyEdition">
+                <div class="formularyLebel">
+                    <label for="titleName">Nombre del producto:</label>
+                </div>
+                <input type="text" id="titleName" name="titleName">
+    
+                <div class="formularyLebel">
+                    <label for="description">Descripción:</label>
+                </div>
+                <textarea name="description" id="description"></textarea>
+
+                <div class="formularyLebel">
+                    <label for="price">Precio:</label>
+                </div>
+                <input type="number" id="price" name="price">
+
+                <div class="formularyLebel">
+                    <label for="stock">Stock:</label>
+                </div>
+                <input type="range" id="stock" name="stock">
+
+                <input type="submit" id="send" value="Guardar">
+            </form>
+        </section>
+    </main>
+
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

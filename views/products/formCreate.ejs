@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <h1 class="Editiontitle">¿Qué quiere vender?</h1>
+        <section class="formularyEdition1">
+            <div class="imgEdition">
+                <img src="../../images/images.png" alt="NN">
+            </div>
+            <form action="url" method="get" class="formularyEdition">
+                <div class="formularyLebel">
+                    <label for="titleName">Nombre del producto:</label>
+                </div>
+                <input type="text" id="titleName" name="titleName">
+    
+                <div class="formularyLebel">
+                    <label for="description">Descripción:</label>
+                </div>
+                <textarea name="description" id="description"></textarea>
+
+                <div class="formularyLebel">
+                    <label for="price">Precio:</label>
+                </div>
+                <input type="number" id="price" name="price">
+
+                <div class="formularyLebel">
+                    <label for="select">tipo de articulo</label>
+                </div>
+                <select name="select" id="select">
+                    <option value="">Seleccionar</option>
+                    <option value="1">Auriculares</option>
+                    <option value="2">Celulares</option>
+                    <option value="3">TV</option>
+                    <option value="4">Notebook</option>
+                    <option value="5">Monitores</option>
+                </select>
+
+                <div class="formularyLebel">
+                    <label for="stock">Stock:</label>
+                </div>
+                <input type="range" id="stock" name="stock">
+
+                <input type="submit" id="send" value="Guardar">
+            </form>
+        </section>
+    </main>
+
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
