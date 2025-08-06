@@ -4,69 +4,50 @@
 <%- include('../partials/head') %>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="../images/cellXpress._logo.png" alt="logoCellXpress">
-            </a>
-        </div>
 
-        <div class="registerAndLoginLink">
-            <a href="login">
-                Log in
-            </a>
-        </div>
-    </header>
+    <%- include('../partials/headerLogAndReg', { link: 'login', texto: 'Log in' }) %>
+    
+    <main class="mainRegister">
+        <div class="imgMed"><img src="images/WorldBike_Logo.png" alt="logo"></div>
+        
+        <section class="formularyRegister">
+            <form action="url" method="get" class="formularyR">
+                <div class="textLabel"><label for="name">Nombre:</label></div>
+                <input type="text" id="name" name="name" placeholder="Nombre" required>
+                
+                <div class="textLabel"><label for="surname">Apellido:</label></div>
+                <input type="text" id="surname" name="surname" placeholder="Apellido" required>
+                
+                <div class="textLabel"><label for="date">Fecha de nacimiento:</label></div>
+                <input type="date" id="date" name="date" required>
+                
+                <div class="textLabel"><label for="select">Género</label></div>
+                <select name="select" id="select">
+                    <option value="">Seleccionar</option>
+                    <option value="1">Otro</option>
+                    <option value="2">Hombre</option>
+                    <option value="3">Mujer</option>
+                </select>
 
-    <main>
-        <h1>¡Bienvenido a CellXpress!</h1>
+                <div class="textLabel"><label for="email">Correo electrónico:</label></div>
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
 
-        <form action="url" method="get" class="formulary">
-            <div class="textLabel">
-                <label for="name">Nombre:</label>
-            </div>
-            <input type="text" id="name" name="name" placeholder="Nombre" required>
+                <div class="textLabel"><label for="password">Contraseña:</label></div>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
 
-            <div class="textLabel">
-                <label for="surname">Apellido:</label>
-            </div>
-            <input type="text" id="surname" name="surname" placeholder="Apellido" required>
-
-            <div class="textLabel">
-                <label for="date">Fecha de nacimiento:</label>
-            </div>
-            <input type="date" id="date" name="date" required>
-
-            <div class="textLabel">
-                <label for="select">Género</label>
-            </div>
-            <select name="select" id="select">
-                <option value="">Seleccionar</option>
-                <option value="1">Otro</option>
-                <option value="2">Hombre</option>
-                <option value="3">Mujer</option>
-            </select>
-
-            <div class="textLabel">
-                <label for="email">Correo electrónico:</label>
-            </div>
-            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
-            
-            <div class="textLabel">
-                <label for="password">Contraseña:</label>
-            </div>
-            <input type="password" id="password" name="password" placeholder="Contraseña" required>
-            
-            <div class="check">
-                <input type="checkbox" id="checkbox" name="checkbox" required>
-                <label for="checkbox">Aceptar terminos y condiciones</label>
-            </div>
-
-            <button type="submit" id="input">Registrarse</button>
-        </form>
+                <div class="check">
+                    <input type="checkbox" id="checkbox" name="checkbox" required>
+                    <label for="checkbox">Aceptar terminos y condiciones</label>
+                </div>
+                
+                <div class="sub">
+                    <button type="submit" id="input">Registrarse</button>
+                    <a href="login">Iniciar sesión</a>
+                </div>
+            </form>
+        </section>
     </main>
 
     <%- include('../partials/footer') %>
-
 </body>
 </html>

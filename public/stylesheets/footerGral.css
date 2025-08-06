@@ -1,0 +1,54 @@
+/*
+#D32F2F RED
+#212121 BLACK SMOKE
+#9E9E9E GRAY
+White
+*/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: solid 2px #D32F2F;
+    background-color: #212121;
+}
+
+footer .startFoot{
+    width: 94%;
+    display: flex;
+    flex-direction: row;
+}
+
+footer .startFoot .logo{
+    width: 30%;
+}
+
+footer .startFoot .logo a img{
+    width: 100%;
+}
+
+footer .socialLinks{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer .startFoot .social{
+    margin: 4%;
+}
+
+footer .startFoot .social a{
+    font-size: 30px;
+    color: #D32F2F;
+}
+
+footer .endFoot{
+    width: 100%;
+    padding: 2%;
+    text-align: center;
+    color: white;
+    background-color: #D32F2F;
+    font-weight: bold;
+}

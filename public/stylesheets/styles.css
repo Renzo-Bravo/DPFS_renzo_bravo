@@ -1,48 +1,13 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    font-size: 16px;
-    background-color: whitesmoke;
-}
-
-/*Header*/
-
-header{
-    background-image: url("../images/fondo1.png");
-    background-size: cover;
-    background-color: black;
-    border-bottom: solid 6px yellow;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4%;
-}
-
-header .logo{
-    width: 30%;
-}
-
-header .logo img{
-    width: 100%;
-}
-
-header .navegation{
-    width: 30%;
-    display: flex;
-    justify-content: center;
-}
-
-header .navegation i{
-    font-size: 250%;
-    color: yellow;
-}
-
-/*Header*/
+/*
+#D32F2F RED
+#212121 BLACK SMOKE
+#9E9E9E GRAY
+White
+*/
 
 /*Main*/
 
-main{
+/*main{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -119,62 +84,7 @@ main .cards .card .titleProduct{
     padding-left: 1rem;
     font-weight: bold;
     background-color: rgb(0, 0, 0, 0.022);
-}
+}*/
 
 /*Main*/
 
-/*Footer*/
-
-footer{
-    background-image: url("../images/fondo1.png");
-    background-size: cover;
-    border-top: solid 6px yellow;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4% 4% 0 4%;
-}
-
-footer .startFoot{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer .logo{
-    width: 30%;
-}
-
-footer .logo a img{
-    width: 100%;
-}
-
-footer .socialLinks{
-    width: 35%;
-    display: flex;
-    justify-content: center;
-}
-    
-footer .socialLinks span{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 6%;
-}
-
-footer .socialLinks span a{
-    font-size: 200%;
-    color: yellow;
-}
-
-footer .endFoot{
-    width: 100%;
-    padding: 4%;
-    background-color: yellow;
-    text-align: center;
-}
-
-/*Footer*/
