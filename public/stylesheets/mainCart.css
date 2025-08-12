@@ -1,0 +1,24 @@
+.headerCart{
+    align-items: center;
+    padding: 5% 4%;
+}
+
+.back .bi-arrow-left{
+    font-size: 40px;
+}
+
+.back, i, .cartTitle{
+    color: yellow;
+}
+
+main .products, img{
+    width: 100%;
+}
+
+main p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30%;
+    color: white;
+    text-align: center;
+}

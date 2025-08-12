@@ -4,81 +4,22 @@
 <%- include('../partials/head') %>
 
 <body>
-    <header>
+    <header class="headerCart">
         <div class="back">
-            <a href="productDetail.html" aria-label="comeBackDetail">
+            <a href="/products/detail" aria-label="comeBackDetail">
                 <i class="bi bi-arrow-left"></i>
             </a>
         </div>
         <div class="title">
-            <h1>Mi Carrito</h1>
+            <h1 class="cartTitle">Mi Carrito</h1>
         </div>
     </header>
 
     <main>
-        <div class="cantProd">
-            <h2>Productos: <strong>3</strong></h2>
+        <div class="products">
+            <img src="/images/cart.png" alt="Cart">
         </div>
-
-        <section class="cardsP">
-            <div class="cardP">
-                <div class="headCart">
-                    <div class="contentCard">
-                        <img src="../images/foto_nubia_neo2_amarillo.webp" alt="Nubia">
-                    </div>
-                    <div class="titleProduct">
-                        Celular Nubia Neo 2 6.7 5GB 8GB Ram 256GB
-                    </div> 
-                </div>
-    
-                <div class="numProd">
-                    <p>
-                        Cantidad: <strong>1</strong>
-                    </p>
-                </div>
-            </div>
-    
-            <div class="cardP">
-                <div class="headCart">
-                    <div class="contentCard">
-                        <img src="../images/auriculares.jpg" alt="Nubia">
-                    </div>
-                    <div class="titleProduct">
-                        Moto Ebud 085
-                    </div> 
-                </div>
-    
-                <div class="numProd">
-                    <p>
-                        Cantidad: <strong>1</strong>
-                    </p>
-                </div>
-            </div>
-    
-            <div class="cardP">
-                <div class="headCart">
-                    <div class="contentCard">
-                        <img src="../images/notebooks.jpg" alt="Nubia">
-                    </div>
-                    <div class="titleProduct">
-                        Asus
-                    </div> 
-                </div>
-    
-                <div class="numProd">
-                    <p>
-                        Cantidad: <strong>1</strong>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <div class="value">
-            <p>
-                Precio: <strong>$1.000.000</strong>
-            </p>
-
-        </div>
+        <p>¡Es hora de llenar ese carrito!</p>
     </main>
 
     <%- include('../partials/footer') %>

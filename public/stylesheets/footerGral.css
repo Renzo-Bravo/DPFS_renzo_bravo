@@ -9,8 +9,8 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: solid 2px #D32F2F;
-    background-color: #212121;
+    border-top: solid 2px yellow;
+    background-color: #252525;
 }
 
 footer .startFoot{
@@ -41,14 +41,14 @@ footer .startFoot .social{
 
 footer .startFoot .social a{
     font-size: 30px;
-    color: #D32F2F;
+    color: yellow
 }
 
 footer .endFoot{
     width: 100%;
-    padding: 2%;
+    padding: 2% 0;
     text-align: center;
-    color: white;
-    background-color: #D32F2F;
+    background-color: yellow;
+    color: #252525;
     font-weight: bold;
 }

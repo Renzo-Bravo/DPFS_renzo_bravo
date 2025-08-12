@@ -5,94 +5,112 @@
 White
 */
 
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-main .titleProdD{
-    margin: 0;
+main .titleProd{
     padding: 2% 2% 0;
     text-align: center;
 }
 
-main .productD, .productD img{
+main .product, .product img{
     width: 100%;
     margin-bottom: 2%;
 }
 
-main .infoPriceAndUserD{
+main .infoPriceAndUser{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 4%;
 }
 
-main .infoPriceAndUserD .priceD{
+main .infoPriceAndUser .price{
     width: 50%;
     padding-left: 2%;
 }
 
-main .infoPriceAndUserD .priceD .lastPriceD{
+main .infoPriceAndUser .price .lastPrice{
     color: gray;
     text-decoration: line-through;
 }
 
-main .infoPriceAndUserD .priceD .nowPriceD{
+main .infoPriceAndUser .price .nowPrice{
     font-size: 20px;
 }
 
-main .infoPriceAndUserD .infoUserD{
+main .infoPriceAndUser .infoUser{
     width: 50%;
     text-align: end;
     padding-right: 2%;
 }
 
-main .btnD{
+main .btn{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main .btn a{
+    padding: 4%;
+    margin-bottom: 4%;
+    border-radius: 12px;
+    background-color: yellow;
+    text-align: center;
+    text-decoration: none;
+    color: #252525;
+}
+
+main .infoProduct{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse; 
+    width: 100%;
+}
+
+th, td {
+    padding: 4%;
+    text-align: left;
+}
+
+.tr1{
+    background-color: #353535;
+}
+
+main .comentaryUsers{
     width: 90%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 4%;
 }
 
-main .btnD a{
-    padding: 4%;
-    border-radius: 12px;
-    background-color: wheat;
+main .comentaryUsers h2{
+    margin-bottom: 4%;
     text-align: center;
-    text-decoration: none;
 }
 
-main .comentaryUsersD{
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-}
-
-main .comentaryUsersD h2{
-    margin-bottom: 2%;
-}
-
-main .comentaryUsersD .userComentD{
+main .comentaryUsers .userComent{
     width: 100%;
     display: flex;
     align-items: center;
     margin-bottom: 2%;
 }
 
-main .comentaryUsersD .userComentD .imageProfileD{
+main .comentaryUsers .userComent .imageProfile{
     width: 15%;
     display: flex;
     justify-content: start;
     align-items: center;
 }
 
-main .comentaryUsersD .userComentD .imageProfileD img{
+main .comentaryUsers .userComent .imageProfile img{
     width: 90%;
     border-radius: 100%;
 }
 
-main .comentaryUsersD .publicComentary{
+main .comentaryUsers .publicComentary{
     width: 100%;
     margin-bottom: 2%;
 }
