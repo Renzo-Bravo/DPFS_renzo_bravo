@@ -22,3 +22,27 @@ main p{
     color: white;
     text-align: center;
 }
+
+@media screen and (min-width: 1024px){
+    .headerCart{
+        padding: 0 4%;
+    }
+
+    main .products, img{
+        width: 50%;
+    }
+
+    main .cartM{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    main .cartM p{
+        margin-bottom: 10%;
+    }
+    
+}

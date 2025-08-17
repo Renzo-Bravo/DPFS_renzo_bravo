@@ -5,86 +5,72 @@
 White
 */
 
-/*Main*/
-
-/*main{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-main .carrousel{
-    width: 90%;
-    margin: 6% 0 6% 0;
-}
-
 main .carrousel img{
-    width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-main .moreArticles, ul{
-    width: 90%;
-}
-
-main .moreArticles ul{
-    width: 100%;
-    padding: 0;
+/*main .cards .card{
+    background-color: #353535;
     display: flex;
-    justify-content: space-around;
-    list-style: none;
-}
-
-main .moreArticles ul li{
-    width: 15%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    height: 100px;
     align-items: center;
-}
-
-main .moreArticles ul li img{
-    width: 100%;
-    border: solid 4px rgba(0, 0, 0, 0.322);
-    border-radius: 100%;
-}
-
-main .cards{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-}
-
-main .cards .card{
-    width: 100%;
-    height: 110px;
-    margin: 4% 0;
-    display: flex;
-    align-items: stretch;
-    border:solid 1px rgb(0, 0, 0, 0.322);
-    background-color: white;
+    margin-bottom: 4%;
 }
 
 main .cards .card .contentCard{
     width: 30%;
-    border-radius: 10px;
+    margin-right: 4%;
+    background-color: white;
 }
 
 main .cards .card .contentCard img{
     width: 100%;
-    height: 100%;
+    max-height: 80px;
+    max-width: 100%;
     object-fit: contain;
+}
+*/
+
+main .cards .card {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4%;
+    height: 90px;             
+    width: 100%;              
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+main .cards .card .contentCard {
+    width: 30%;               
+    margin-right: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
 }
 
-main .cards .card .titleProduct{
-    width: 70%;
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-    font-weight: bold;
-    background-color: rgb(0, 0, 0, 0.022);
-}*/
+main .cards .card .contentCard img {
+    max-height: 70px;         
+    max-width: 100%;
+    object-fit: contain;
+}
 
-/*Main*/
+@media screen and (min-width: 1024px){
+    main .carrousel{
+        margin-top: 4%;
+        width: 50%;
+    }
 
+    main .carrousel img{
+        width: 100%;
+        border-radius: 12px;
+    }
+
+
+    
+}

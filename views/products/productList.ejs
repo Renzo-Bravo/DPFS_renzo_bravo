@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include('../partials/head') %>
+    
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <% products.forEach(prod => { %>
+            <article class="cardList">
+                <a href="/">
+                    <img src="/images/allTerra.jpg" alt="Ejemplo">
+                    <div class="cardInfo">
+                        <p><%= prod.categoria %></p>
+                        <p><%= prod.precio %></p>
+                    </div>
+                </a>
+            </article>
+        <% }) %>
+    </main>
+    
+    <%- include('../partials/footer') %>
+</body>
+</html>
+

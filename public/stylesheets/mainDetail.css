@@ -115,3 +115,51 @@ main .comentaryUsers .publicComentary{
     margin-bottom: 2%;
 }
 
+@media screen and (min-width: 1024px){
+    main .PContain{
+        width: 100%;
+        display: flex;
+    }
+
+
+    main .contain{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .contain .titleProd{
+        padding: 0;
+    }
+
+    main .contain .product, img{
+        width: 100%;
+    }
+
+    main .contain .btn{
+        width: 80%;
+    }
+
+    main .contain .btn a:hover{
+        transition: transform 0.4s ease;
+        transform: scale(1.1)
+    }
+
+    main .contain2{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    table{
+        width: 60%;
+    }
+
+    main .comentaryUsers{
+        width: 60%;
+    }
+
+}

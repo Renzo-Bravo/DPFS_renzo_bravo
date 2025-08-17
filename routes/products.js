@@ -6,7 +6,10 @@ var router = express.Router();
 router.get('/cart',  productsCtrl.cart);
 
 /*Get Detail page.*/
-router.get('/detail', productsCtrl.products);
+router.get('/detail/:id', productsCtrl.products);
+
+/*Get list product*/
+router.get('/list', productsCtrl.list);
 
 /*Get Form create*/
 router.get('/create', productsCtrl.create);

@@ -52,3 +52,21 @@ footer .endFoot{
     color: #252525;
     font-weight: bold;
 }
+
+@media screen and (min-width: 1024px){
+    footer .startFoot{
+        width: 94%;
+    }
+
+    footer .startFoot .logo{
+        width: 30%;
+    }
+    
+    footer .startFoot .logo a img{
+        width: 27%;
+    }
+    
+    footer .endFoot{
+        padding: 1% 0;
+    }
+}

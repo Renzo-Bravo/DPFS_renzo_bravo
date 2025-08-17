@@ -25,24 +25,37 @@ header .headerOptions a i{
     text-decoration: none;
 }
 
-header .headerOptions span a{
+header .headerOptions .btnHome a{
     text-decoration: none;
-    padding: 15%;
+    padding: 10px;
+    font-weight: bold;
     border-radius: 12px;
     color: #252525;
     background-color: yellow;
 }
 
-header .headerOptions i, span{
+header .headerOptions i, .btnHome{
+    text-align: center;
     margin: 10%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
-header .logo{
-    width: 50%;
-}
+@media screen and (min-width:1024px) {
+    header {
+        padding: 0 3%;
+    }
 
-header .logo img{
-    width: 100%;
+    header .headerOptions{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+    }
+
+    header .headerOptions .btnHome{
+        margin: 5% 0 3%;
+    }
 }

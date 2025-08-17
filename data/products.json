@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "descripcion": "Teléfono inteligente con pantalla AMOLED de 6.5 pulgadas",
+    "categoria": "Celulares",
+    "color": "Negro",
+    "precio": 299.99
+  },
+  {
+    "id": 2,
+    "descripcion": "Celular gama alta con cámara de 108MP y batería de 5000mAh",
+    "categoria": "Celulares",
+    "color": "Plateado",
+    "precio": 899.99
+  },
+  {
+    "id": 3,
+    "descripcion": "Smartphone compacto con 128GB de almacenamiento",
+    "categoria": "Celulares",
+    "color": "Azul",
+    "precio": 199.99
+  },
+  {
+    "id": 4,
+    "descripcion": "Celular resistente al agua con pantalla de 120Hz",
+    "categoria": "Celulares",
+    "color": "Verde",
+    "precio": 449.99
+  },
+  {
+    "id": 5,
+    "descripcion": "Teléfono plegable de última generación",
+    "categoria": "Celulares",
+    "color": "Oro",
+    "precio": 1499.99
+  }
+]
