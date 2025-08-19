@@ -9,7 +9,7 @@
     <main>
         <div class="PContain">
             <div class="contain">
-                <h2 class="titleProd">Olmo Wish 29</h2>
+                <h2 class="titleProd"><%= product.titulo %></h2>
                 <div class="product">
                     <img src="/images/olmoWish.jpg" alt="product">
                 </div>
@@ -17,7 +17,7 @@
                 <div class="infoPriceAndUser">
                     <div class="price">
                         <div class="lastPrice">
-                            $500.000
+                            <%= product.precio %>
                         </div>
                         <div class="nowPrice">
                             $420.000
@@ -54,7 +54,7 @@
                         </tr>
                         <tr class="tr1">
                             <td>Modelo</td>
-                            <th>290</th>
+                            <th><%= product.categoria %></th>
                         </tr>
                         <tr>
                             <td>Edad</td>
@@ -69,7 +69,7 @@
                             <th>Masculino</th>
                         </tr>
                         <tr class="tr1">
-                            <td>Color</td>
+                            <td><%= product.color %></td>
                             <th>Negro/Naranja</th>
                         </tr>
                     </table>

@@ -28,7 +28,7 @@ main .formulary form{
     border-radius: 12px;
     align-items: center;
     flex-direction: column;
-    background-color: #353535;
+    background-color: #353535; 
 }
 
 main .formulary form Label{
