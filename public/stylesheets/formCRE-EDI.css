@@ -6,6 +6,10 @@
     background-color: azure;
 }
 
+h2{
+    margin: 0;
+}
+
 .titleEdition{
     width: 100%;
     padding: 6%;
@@ -37,4 +41,22 @@ input, textarea{
     padding: 2%;
     width: 100%;
     border-radius: 10px;
+}
+
+@media screen and (min-width: 1024px){
+    .formularyEdition1{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .imgEdition{
+        width: 50%;
+    }
+
+    .formularyEdition{
+        width: 50%;
+    }
+
+    
 }

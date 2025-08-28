@@ -7,17 +7,25 @@
     <%- include('../partials/header') %>
 
     <main>
-        <% products.forEach(prod => { %>
-            <article class="cardList">
-                <a href="/">
-                    <img src="/images/allTerra.jpg" alt="Ejemplo">
-                    <div class="cardInfo">
-                        <p><%= prod.categoria %></p>
-                        <p><%= prod.precio %></p>
-                    </div>
-                </a>
-            </article>
-        <% }) %>
+        <section class="containList">
+
+            <% products.forEach(prod => { %>
+                <article class="cardList">
+                    <a href="/" class="cardL">
+                        <img src="/images/<%= prod.image %>" alt="Ejemplo">
+                        <div class="cardDescription">
+                            <p class="cardInfo"><%= prod.name %></p>
+                            <p class="cardInfo"><%= prod.price %></p>
+                        </div>
+                        <div class="btnCardList">
+                            <a href="#">Comprar</a>
+                            <a href="/products/detail/<%= prod.id %>">Ver</a>
+                        </div>
+                    </a>
+                </article>
+            <% }) %>
+
+        </section>
     </main>
     
     <%- include('../partials/footer') %>

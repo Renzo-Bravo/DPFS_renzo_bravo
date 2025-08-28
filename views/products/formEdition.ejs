@@ -7,27 +7,54 @@
     <%- include('../partials/header') %>
 
     <main>
-        <h1 class="Editiontitle">Edicion de producto</h1>
-        <h2 class="TitleEdition">Celular Nubia Neo 2 6.7 5G 8GB Ram 256 GB</h2>
         <section class="formularyEdition1">
-            <div class="imgEdition">
-                <img src="../../images/foto_nubia_neo2_amarillo.webp" alt="CelularNubia">
-            </div>
-            <form action="url" method="get" class="formularyEdition">
+            <form action="/products/edition/<%= product.id %>?_method=put" method="post" class="formularyEdition">
                 <div class="formularyLebel">
-                    <label for="titleName">Nombre del producto:</label>
+                    <label for="image">Subir imagen:</label>
                 </div>
-                <input type="text" id="titleName" name="titleName">
+                <input type="file" id="image" name="image" accept="image/*">
+                <div>
+                    <% if (product.image) { %>
+                      <img id="preview" src="/images/<%= product.image %>" alt="Producto" style="width: 200px;">
+                    <% } else { %>
+                        <img id="preview" src="" alt="Producto" style="width: 200px;">
+                    <% } %>
+                </div>
+
+                 <div class="formularyLebel">
+                    <label for="titulo">Modelo:</label>
+                </div>
+                <input type="text" class="titleName" id="titulo" name="name" value="<%= product.name %>">
+
+                 <div class="formularyLebel">
+                    <label for="brand">Marca:</label>
+                </div>
+                <input type="text" class="titleName" id="brand" name="brand" value="<%= product.brand %>">
+
+                 <div class="formularyLebel">
+                    <label for="line">Linea:</label>
+                </div>
+                <input type="text" class="titleName" id="line" name="line" value="<%= product.line %>">
+
+                <div class="formularyLebel">
+                    <label for="year">Marca:</label>
+                </div>
+                <input type="text" class="titleName" id="year" name="year" value="<%= product.year %>">
+    
+                <div class="formularyLebel">
+                    <label for="categoria">Tipo de bicicleta:</label>
+                </div>
+                <input type="text" class="titleName" id="categoria" name="type" value="<%= product.type %>">
     
                 <div class="formularyLebel">
                     <label for="description">Descripción:</label>
                 </div>
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" id="description"><%= product.description %></textarea>
 
                 <div class="formularyLebel">
                     <label for="price">Precio:</label>
                 </div>
-                <input type="number" id="price" name="price">
+                <input type="number" id="precio" name="price" value="<%= product.price %>">
 
                 <div class="formularyLebel">
                     <label for="stock">Stock:</label>

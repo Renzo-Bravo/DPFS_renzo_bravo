@@ -9,14 +9,36 @@
     <main>
         <h1 class="Editiontitle">¿Qué quiere vender?</h1>
         <section class="formularyEdition1">
-            <div class="imgEdition">
-                <img src="../../images/images.png" alt="NN">
-            </div>
-            <form action="url" method="get" class="formularyEdition">
+            <form action="/products/create" method="post" class="formularyEdition">
                 <div class="formularyLebel">
-                    <label for="titleName">Nombre del producto:</label>
+                    <label for="image">Subir imagen:</label>
                 </div>
-                <input type="text" id="titleName" name="titleName">
+                <input type="file" id="image" name="image" accept="image/*">
+                
+                 <div class="formularyLebel">
+                    <label for="titulo">Modelo:</label>
+                </div>
+                <input type="text" class="titleName" id="titulo" name="name">
+
+                 <div class="formularyLebel">
+                    <label for="brand">Marca:</label>
+                </div>
+                <input type="text" class="titleName" id="brand" name="brand">
+
+                 <div class="formularyLebel">
+                    <label for="line">Linea:</label>
+                </div>
+                <input type="text" class="titleName" id="line" name="line">
+
+                <div class="formularyLebel">
+                    <label for="year">Marca:</label>
+                </div>
+                <input type="text" class="titleName" id="year" name="year">
+    
+                <div class="formularyLebel">
+                    <label for="categoria">Tipo de bicicleta:</label>
+                </div>
+                <input type="text" class="titleName" id="categoria" name="type">
     
                 <div class="formularyLebel">
                     <label for="description">Descripción:</label>
@@ -26,19 +48,7 @@
                 <div class="formularyLebel">
                     <label for="price">Precio:</label>
                 </div>
-                <input type="number" id="price" name="price">
-
-                <div class="formularyLebel">
-                    <label for="select">tipo de articulo</label>
-                </div>
-                <select name="select" id="select">
-                    <option value="">Seleccionar</option>
-                    <option value="1">Auriculares</option>
-                    <option value="2">Celulares</option>
-                    <option value="3">TV</option>
-                    <option value="4">Notebook</option>
-                    <option value="5">Monitores</option>
-                </select>
+                <input type="number" id="precio" name="price" >
 
                 <div class="formularyLebel">
                     <label for="stock">Stock:</label>

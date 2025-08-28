@@ -2,8 +2,12 @@ var express = require('express');
 const productsCtrl = require('../controllers/productsCtrl');
 var router = express.Router();
 
-/* GET Cart page. */
+/* Gey Cart page. */
 router.get('/cart',  productsCtrl.cart);
+
+/*Get Delete PAge */
+
+router.get('delete/:id', productsCtrl.delete)
 
 /*Get Detail page.*/
 router.get('/detail/:id', productsCtrl.detail);
@@ -15,6 +19,7 @@ router.get('/list', productsCtrl.list);
 router.get('/create', productsCtrl.create);
 
 /*Get Form edition*/
-router.get('/edition', productsCtrl.edition);
+router.get('/edition/:id', productsCtrl.editionForm);
+router.put('/edition/:id', productsCtrl.updateForm);
 
 module.exports = router;

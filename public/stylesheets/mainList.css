@@ -1,0 +1,65 @@
+.containList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px; 
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.cardList {
+    background-color: #353535;
+    border: 1px yellow solid; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.cardList:hover {
+    transform: translateY(-5px);
+}
+
+.cardL {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cardL img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* evita deformaciones */
+    display: block;
+}
+
+.cardDescription {
+    padding: 10px;
+    text-align: center;
+}
+
+.cardDescription h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.cardDescription .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cardInfo {
+    margin: 5%;
+}
+
+.btnCardList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    text-decoration: none;
+}
+
+.btnCardList a{
+    margin: 2%;
+}
