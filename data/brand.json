@@ -1,0 +1,30 @@
+[
+ {
+    "id" : 1,
+    "nameBrand": "Olmo"
+ },
+ {
+    "id" : 2,
+    "nameBrand": "Venzo"
+ },
+ {
+    "id" : 3,
+    "nameBrand": "Raleigh"
+ },
+ {
+    "id" : 4,
+    "nameBrand": "Specialized"
+ },
+ {
+   "id" : 5,
+   "nameBrand": "Fire Bird"
+ },
+ {
+   "id" : 6,
+   "nameBrand": "Naza te amo"
+ },
+ {
+   "id" : 7,
+   "nameBrand": "José pito chico"
+ }
+]

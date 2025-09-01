@@ -14,39 +14,15 @@
 
         <section class="cards">
             <h2>Marcas</h2>
-            <div class="card">
-                <div class="contentCard">
-                    <img src="images/olmo.jpg" alt="Olmo">
-                </div>
-                <div class="titleProduct">
-                    Olmo
-                </div>
+    <% brands.forEach(brand => { %>
+        <div class="card">
+            <div class="titleProduct">
+                <%= brand.nameBrand %>
             </div>
-            <div class="card">
-                <div class="contentCard">
-                    <img src="images/venzo.jpg" alt="Venzo">
-                </div>
-                <div class="titleProduct">
-                    Venzo
-                </div>
-            </div>
-            <div class="card">
-                <div class="contentCard">
-                    <img src="images/specialized.jpg" alt="Specialized">                    
-                </div>
-                <div class="titleProduct">
-                    Specialized
-                </div>
-            </div>
-            <div class="card">
-                <div class="contentCard">
-                    <img src="images/raleigh.jpg" alt="Raleigh">
-                </div>
-                <div class="titleProduct">
-                    Raleigh
-                </div>
-            </div>
-        </section>
+        </div>
+    <% }) %>
+</section>
+
     </main>
 
     <%- include('partials/footer') %>

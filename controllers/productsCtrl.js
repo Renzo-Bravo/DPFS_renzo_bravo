@@ -1,4 +1,6 @@
+const { name } = require("ejs");
 const fs = require("fs");
+const { type } = require("os");
 const path = require("path");
 
 const productsPath = path.join(__dirname, '../', 'data', 'products.json')
@@ -7,11 +9,30 @@ const productsCtrl = {
     cart:function(req, res, next) {
         const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"))
         res.render('products/productCart', { title: 'Express' });},
-
-    create:function(req, res, next) {
-        const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"))
+        
+    createForm: function(req, res, next) {
         res.render('products/formCreate', { title: 'Express' });},
 
+    createProduct: function(req, res, next) {
+        const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
+        const newProduct = {
+            id:products.length + 1,
+            name: req.body.name,
+            brand: req.body.brand,
+            line: req.body.line,
+            year: req.body.year,
+            type: req.body.type,
+            description: req.body.description,
+            price: req.body.price,
+        }
+
+        products.push(newProduct)
+        const productsJSON = JSON.stringify(products, null, ' ')
+        fs.writeFileSync(productsPath, productsJSON)
+
+        res.redirect('/')
+    },    
+ 
     detail:function(req, res, next) {
         const id = req.params.id;
         const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));

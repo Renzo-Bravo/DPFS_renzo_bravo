@@ -21,6 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
