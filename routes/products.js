@@ -6,8 +6,7 @@ var router = express.Router();
 router.get('/cart',  productsCtrl.cart);
 
 /*Get Delete PAge */
-
-router.get('delete/:id', productsCtrl.delete)
+router.delete('/delete/:id', productsCtrl.delete)
 
 /*Get Detail page.*/
 router.get('/detail/:id', productsCtrl.detail);

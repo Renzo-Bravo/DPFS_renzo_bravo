@@ -40,8 +40,13 @@ const productsCtrl = {
         res.render('products/productDetail', { product: prod });},
 
     delete:function(req, res, next) {
-        const id = req.params.id;
-        const product = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
+        const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
+
+        const delProducts = products.filter(product => product.id != req.params.id)
+
+        const productsJSON = JSON.stringify(delProducts, null, " ")
+
+        fs.writeFileSync(productsPath, productsJSON)
 
         res.redirect("/products/list")},
 
@@ -68,7 +73,7 @@ const productsCtrl = {
             }
         });
 
-        const productsJSON = JSON.stringify(products, "null", " ");
+        const productsJSON = JSON.stringify(products, null, " ");
         fs.writeFileSync(productsPath, productsJSON);
 
         res.redirect('/products/detail/'+ req.params.id)},
