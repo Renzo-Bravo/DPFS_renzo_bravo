@@ -14,12 +14,14 @@ const productsCtrl = {
         res.render('products/formCreate', { title: 'Express' });},
 
     createProduct: function(req, res, next) {
+        console.log(req.find)
         const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
         const newProduct = {
             id:products.length + 1,
             name: req.body.name,
             brand: req.body.brand,
             line: req.body.line,
+            image: req.file?.filename || "images.png",
             year: req.body.year,
             type: req.body.type,
             description: req.body.description,
@@ -67,7 +69,7 @@ const productsCtrl = {
                 product.gender = req.body.gender;
                 product.line = req.body.line;
                 product.name = req.body.name;
-                product.image = req.body.image;
+                product.image = req.file?.filename || product.image;
                 product.price = req.body.price;
                 product.type = req.body.type;
             }
