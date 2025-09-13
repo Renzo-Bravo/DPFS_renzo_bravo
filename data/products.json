@@ -12,57 +12,18 @@
   "year": 2020
  },
  {
-  "id": 4,
-  "name": "Venzo Skyline",
-  "brand": "Venzo",
-  "category": "Adulto",
-  "color": "Verde",
-  "descrption": "Cuenta con suspensión delantera (hardtail) o doble suspensión, que absorbe los impactos y mejora el control en superficies difíciles. Sus ruedas anchas con cubiertas de gran agarre permiten rodar con seguridad en barro, piedras o arena. Dispone de un sistema de cambios de múltiples velocidades, ideal para subir pendientes pronunciadas y descender con control.",
-  "gender": "Femenino",
-  "line": "Sky",
-  "price": 449.99,
-  "type": "Paseo",
-  "image": "skylineV.jpg",
-  "year": 2023
- },
- {
-  "id": 4,
-  "name": "aaa",
-  "brand": "1211",
-  "line": "121",
-  "year": "121",
-  "type": "121",
-  "description": "1211",
-  "price": "2111"
- },
- {
-  "id": 5,
-  "name": "1212",
-  "brand": "12121",
-  "line": "12112",
-  "year": "1211",
-  "type": "2121",
-  "description": "1211",
-  "price": "21121"
- },
- {
-  "id": 6,
-  "name": "12121",
-  "brand": "12121",
-  "line": "1211",
-  "year": "12121",
-  "type": "121212",
-  "description": "1211",
-  "price": "1211"
- },
- {
-  "id": 7,
-  "name": "12121",
-  "brand": "2111",
-  "line": "12121",
-  "year": "121",
-  "type": "1211",
-  "description": "121",
-  "price": "1212"
+  "id": 2,
+  "name": "1111",
+  "brand": [
+   "111",
+   "1111"
+  ],
+  "category": "22",
+  "gender": "fem",
+  "line": "111",
+  "image": "images.png",
+  "type": "mtb",
+  "description": "1221",
+  "price": "12"
  }
 ]
