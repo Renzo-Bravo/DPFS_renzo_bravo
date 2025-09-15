@@ -1,35 +1,47 @@
 [
  {
-    "id": 1,
-    "typeBike": "BMX"
-},
-{
-    "id": 2,
-    "typeBike": "E-Bikes"
+  "id": 1,
+  "typeBike": "BMX"
  },
  {
-    "id": 3,
-    "typeBike": "Gravel"
+  "id": 2,
+  "typeBike": "E-Bikes"
  },
  {
-    "id": 4,
-    "typeBike": "Hibridas"
+  "id": 3,
+  "typeBike": "Gravel"
  },
  {
-    "id": 5,
-    "typeBike": "MTB"
+  "id": 4,
+  "typeBike": "Hibridas"
  },
  {
-    "id": 6,
-    "typeBike": "Paseo"
+  "id": 5,
+  "typeBike": "MTB"
  },
  {
-    "id": 7,
-    "typeBike": "Plegables"
+  "id": 6,
+  "typeBike": "Paseo"
  },
  {
-    "id": 8,
-    "typeBike": "Ruta-Carretera"
-
+  "id": 7,
+  "typeBike": "Plegables"
+ },
+ {
+  "id": 8,
+  "typeBike": "Ruta-Carretera"
+ },
+ {
+  "id": 9
+ },
+ {
+  "id": 10
+ },
+ {
+  "id": 11
+ },
+ {
+  "id": 12,
+  "typeBike": "nose"
  }
 ]

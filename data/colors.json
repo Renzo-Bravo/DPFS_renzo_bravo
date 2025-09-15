@@ -1,26 +1,33 @@
 [
  {
-    "id": 1,
-    "color": "Amarillo"
+  "id": 1,
+  "color": "Amarillo"
  },
  {
-    "id": 2,
-    "color": "Gris"
+  "id": 2,
+  "color": "Gris"
  },
  {
-    "id": 3,
-    "color": "Celeste"
+  "id": 3,
+  "color": "Celeste"
  },
  {
-    "id": 4,
-    "color": "Naranja"
+  "id": 4,
+  "color": "Naranja"
  },
  {
-   "id": 5,
-   "color": "Rojo"
+  "id": 5,
+  "color": "Rojo"
  },
  {
-   "id": 6,
-   "color": "Azul"
+  "id": 6,
+  "color": "Azul"
+ },
+ {
+  "id": 7
+ },
+ {
+  "id": 8,
+  "color": "prueba"
  }
 ]
