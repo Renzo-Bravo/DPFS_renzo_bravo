@@ -8,4 +8,7 @@ router.get('/login', usersCtrl.login);
 /* GET register page */
 router.get('/register', usersCtrl.register);
 
+/* Get profile page */
+router.get('/profile', usersCtrl.profile)
+
 module.exports = router;

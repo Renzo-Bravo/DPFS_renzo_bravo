@@ -4,7 +4,10 @@ const usersCtrl = {
 },
     register:function(req, res, next) {
         res.render('users/register', { title : 'Express'});
-}
+},
+    profile:function(req, res, next) {
+        res.render('users/profile')
+    }
 }
 
 module.exports = usersCtrl;

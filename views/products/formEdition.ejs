@@ -37,6 +37,19 @@
                 <input type="text" class="titleName" id="line" name="line" value="<%= product.line %>">
 
                 <div class="formularyLebel">
+                    <label for="color">Color:</label>
+                </div>
+
+                <select class="titleName" id="color" name="color">
+                    <option value="<%= product.color %>">--Selecciona un color--</option>
+                    <% colors.forEach(c => { %>
+                    <option value="<%= c.color %>"><%= product.color === c.color ? "selected" : "" %>>
+                        <%= c.color %>
+                    </option>
+                    <% }) %>
+                </select>
+
+                <div class="formularyLebel">
                     <label for="year">Marca:</label>
                 </div>
                 <input type="text" class="titleName" id="year" name="year" value="<%= product.year %>">

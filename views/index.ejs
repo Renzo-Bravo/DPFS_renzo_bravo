@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-<%- include('partials/head') %>
+  <%- include('partials/head') %>
 
-<body>
-    
+  <body>
     <%- include('partials/header') %>
 
     <main>
-        <article class="carrousel">
-            <img src="images/carrousel1.jpeg" alt="carrousel">
-        </article>
+      <article class="carrousel">
+        <img src="images/carrousel1.jpeg" alt="carrousel" />
+      </article>
 
-        <section class="cards">
-            <h2>Marcas</h2>
-    <% brands.forEach(brand => { %>
+      <section class="cards">
+        <h2>Marcas</h2>
+        <% brands.forEach(brand => { %>
         <div class="card">
-            <div class="titleProduct">
-                <%= brand.nameBrand %>
-            </div>
+          <div class="brandImg">brand.image</div>
+          <div class="titleProduct"><%= brand.nameBrand %></div>
         </div>
-    <% }) %>
-</section>
-
+        <% }) %>
+      </section>
     </main>
 
     <%- include('partials/footer') %>
-
-
-</body>
+  </body>
 </html>

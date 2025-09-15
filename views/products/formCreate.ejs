@@ -31,9 +31,15 @@
                 <input type="text" class="titleName" id="line" name="line">
 
                 <div class="formularyLebel">
-                    <label for="year">Marca:</label>
+                    <label for="color">Color:</label>
                 </div>
-                <input type="text" class="titleName" id="brand" name="brand">
+                
+                <select class="titleName" id="color" name="color">
+                    <option value="">--Selecciona un color--</option>
+                    <% colors.forEach(c => { %>
+                        <option value="<%= c.color %>"><%= c.color %></option>
+                    <% }) %>
+                </select>
 
                 <div class="formularyLebel">
                     <label for="year">Edad:</label>

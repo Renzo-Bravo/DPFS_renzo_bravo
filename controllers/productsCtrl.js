@@ -3,15 +3,23 @@ const fs = require("fs");
 const { type } = require("os");
 const path = require("path");
 
+const categoriesPath = path.join(__dirname, '../', 'data', 'category.json')
+const colorsPath = path.join(__dirname, '../', 'data', 'colors.json')
 const productsPath = path.join(__dirname, '../', 'data', 'products.json')
 
 const productsCtrl = {
+    accesories:function(req, res, next) {
+        res.render('products/accesories')
+    },
+
     cart:function(req, res, next) {
         const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"))
         res.render('products/productCart', { title: 'Express' });},
         
     createForm: function(req, res, next) {
-        res.render('products/formCreate', { title: 'Express' });},
+        const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"))
+        const colors = JSON.parse(fs.readFileSync(colorsPath, "utf-8"))
+        res.render('products/formCreate', { categories, colors});},
 
     createProduct: function(req, res, next) {
         const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
@@ -20,6 +28,7 @@ const productsCtrl = {
             name: req.body.name,
             brand: req.body.brand,
             category: req.body.category,
+            color: req.body.color,
             gender: req.body.gender,
             line: req.body.line,
             image: req.file && req.file.filename ? req.file.filename : "images.png",
@@ -54,10 +63,11 @@ const productsCtrl = {
         res.redirect("/products/list")},
 
     editionForm:function(req, res, next) {
+        const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"))
+        const colors = JSON.parse(fs.readFileSync(colorsPath, "utf-8"))
         const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"))
         const prod = products.find((prod) => {return prod.id == req.params.id})
-        console.log(prod)
-        res.render('products/formEdition.ejs', {product :prod})},
+        res.render('products/formEdition.ejs', {product :prod, categories, colors})},
 
     updateForm:function(req, res, next) {
         const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"))
@@ -66,6 +76,7 @@ const productsCtrl = {
              if (product.id == req.params.id) {
                 product.brand = req.body.brand;
                 product.category = req.body.category;
+                product.color = req.body.color;
                 product.description = req.body.description;
                 product.gender = req.body.gender;
                 product.year = req.body.year;

@@ -5,161 +5,164 @@
 White
 */
 
-main .titleProd{
-    padding: 2% 2% 0;
-    text-align: center;
+main .titleProd {
+  padding: 2% 2% 0;
+  text-align: center;
 }
 
-main .product, .product img{
-    width: 100%;
-    margin-bottom: 2%;
+main .product,
+.product img {
+  width: 100%;
+  margin-bottom: 2%;
 }
 
-main .infoPriceAndUser{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 4%;
+main .infoPriceAndUser {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4%;
 }
 
-main .infoPriceAndUser .price{
-    width: 50%;
-    padding-left: 2%;
+main .infoPriceAndUser .price {
+  width: 50%;
+  padding-left: 2%;
 }
 
-main .infoPriceAndUser .price .lastPrice{
-    color: gray;
-    text-decoration: line-through;
+main .infoPriceAndUser .price .lastPrice {
+  color: gray;
+  text-decoration: line-through;
 }
 
-main .infoPriceAndUser .price .nowPrice{
-    font-size: 20px;
+main .infoPriceAndUser .price .nowPrice {
+  font-size: 20px;
 }
 
-main .infoPriceAndUser .infoUser{
-    width: 50%;
-    text-align: end;
-    padding-right: 2%;
+main .infoPriceAndUser .infoUser {
+  width: 50%;
+  text-align: end;
+  padding-right: 2%;
 }
 
-main .btn{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+main .btn,
+form .btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-main .btn a{
-    padding: 4%;
-    margin-bottom: 4%;
-    border-radius: 12px;
-    background-color: yellow;
-    text-align: center;
-    text-decoration: none;
-    color: #252525;
+main .btn a,
+form .btn {
+  padding: 4%;
+  margin-bottom: 4%;
+  border-radius: 12px;
+  background-color: yellow;
+  text-align: center;
+  text-decoration: none;
+  color: #252525;
 }
 
-main .infoProduct{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+main .infoProduct {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 table {
-    border-collapse: collapse; 
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 4%;
+  text-align: left;
+}
+
+.tr1 {
+  background-color: #353535;
+}
+
+main .comentaryUsers {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4%;
+}
+
+main .comentaryUsers h2 {
+  margin-bottom: 4%;
+  text-align: center;
+}
+
+main .comentaryUsers .userComent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+main .comentaryUsers .userComent .imageProfile {
+  width: 15%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+main .comentaryUsers .userComent .imageProfile img {
+  width: 90%;
+  border-radius: 100%;
+}
+
+main .comentaryUsers .publicComentary {
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+@media screen and (min-width: 1024px) {
+  main .PContain {
     width: 100%;
-}
+    display: flex;
+  }
 
-th, td {
-    padding: 4%;
-    text-align: left;
-}
-
-.tr1{
-    background-color: #353535;
-}
-
-main .comentaryUsers{
-    width: 90%;
+  main .contain {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 4%;
-}
-
-main .comentaryUsers h2{
-    margin-bottom: 4%;
-    text-align: center;
-}
-
-main .comentaryUsers .userComent{
-    width: 100%;
-    display: flex;
     align-items: center;
-    margin-bottom: 2%;
-}
+  }
 
-main .comentaryUsers .userComent .imageProfile{
-    width: 15%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
+  main .contain .titleProd {
+    padding: 0;
+  }
 
-main .comentaryUsers .userComent .imageProfile img{
-    width: 90%;
-    border-radius: 100%;
-}
-
-main .comentaryUsers .publicComentary{
+  main .contain .product,
+  img {
     width: 100%;
-    margin-bottom: 2%;
-}
+  }
 
-@media screen and (min-width: 1024px){
-    main .PContain{
-        width: 100%;
-        display: flex;
-    }
+  main .contain .btn {
+    width: 80%;
+  }
 
+  main .contain .btn a:hover {
+    transition: transform 0.4s ease;
+    transform: scale(1.1);
+  }
 
-    main .contain{
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  main .contain2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-    main .contain .titleProd{
-        padding: 0;
-    }
+  table {
+    width: 60%;
+  }
 
-    main .contain .product, img{
-        width: 100%;
-    }
-
-    main .contain .btn{
-        width: 80%;
-    }
-
-    main .contain .btn a:hover{
-        transition: transform 0.4s ease;
-        transform: scale(1.1)
-    }
-
-    main .contain2{
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    table{
-        width: 60%;
-    }
-
-    main .comentaryUsers{
-        width: 60%;
-    }
-
+  main .comentaryUsers {
+    width: 60%;
+  }
 }

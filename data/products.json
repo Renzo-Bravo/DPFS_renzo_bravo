@@ -1,29 +1,28 @@
 [
  {
-  "id": 1,
-  "name": "Olmo ",
-  "brand": "Fiat",
-  "color": "Negro",
-  "description": "Cuenta con suspensión delantera (hardtail) o doble suspensión, que absorbe los impactos y mejora el control en superficies difíciles. Sus ruedas anchas con cubiertas de gran agarre permiten rodar con seguridad en barro, piedras o arena. Dispone de un sistema de cambios de múltiples velocidades, ideal para subir pendientes pronunciadas y descender con control.",
-  "line": "Prueba 1",
-  "price": "10000",
-  "type": "Paseo",
-  "image": "allTerra.jpg",
-  "year": 2020
- },
- {
-  "id": 2,
-  "name": "1111",
-  "brand": [
-   "111",
-   "1111"
-  ],
-  "category": "22",
-  "gender": "fem",
+  "id": 3,
+  "name": "nose",
+  "brand": "111",
+  "category": "1111",
+  "color": "Amarillo",
+  "gender": "11",
   "line": "111",
   "image": "images.png",
-  "type": "mtb",
-  "description": "1221",
-  "price": "12"
+  "type": "111",
+  "description": "111",
+  "price": "111"
+ },
+ {
+  "id": 4,
+  "name": "1222",
+  "brand": "22",
+  "category": "1232123",
+  "color": "Rojo",
+  "gender": "13132",
+  "line": "2121",
+  "image": "image-1757906451196.jpg",
+  "type": "12312312",
+  "description": "12312",
+  "price": "3123123"
  }
 ]

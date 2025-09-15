@@ -18,5 +18,9 @@
  {
    "id": 5,
    "color": "Rojo"
+ },
+ {
+   "id": 6,
+   "color": "Azul"
  }
 ]
