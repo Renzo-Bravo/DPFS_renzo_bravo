@@ -45,6 +45,14 @@ main .cards .card {
     border-radius: 12px;
 }
 
+main .cards .card .brandImg{
+    width: 10%;
+}
+
+main .cards .card .brandImg img{
+    width: 100%;
+}
+
 main .cards .card .contentCard {
     width: 30%;               
     margin-right: 4%;

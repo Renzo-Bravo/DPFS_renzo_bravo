@@ -3,14 +3,13 @@
   "id": 3,
   "name": "nose",
   "brand": "111",
-  "category": "1111",
   "color": "Amarillo",
-  "gender": "11",
   "line": "111",
-  "image": "images.png",
+  "image": "image-1757967033109.png",
   "type": "111",
   "description": "111",
-  "price": "111"
+  "price": "111",
+  "year": ""
  },
  {
   "id": 4,
