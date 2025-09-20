@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('../partials/head') %>
 
-<%- include('../partials/head') %>
-
-<body>
+  <body>
     <%- include('../partials/header') %>
 
     <section class="sectionProfile">
-        <div class="imgProfile">
-            <img src="../images/profile/profile.jpg" alt="Perfil">
-        </div>
-        
-        <div class="dateProfile">
-            <h3>Nombre:</h4>
-            <h3>Edad:</h4>
-            <h3>Correo Electronico:</h4>
-            <h3>Género:</h4>
-            <h3>País:</h4>
-        </div>
+      <div class="imgProfile">
+        <img src="../images/profile/profile.jpg" alt="Perfil" />
+      </div>
+
+      <div class="dateProfile">
+        <h3>Nombre:</h3>
+        <h3>Edad:</h3>
+        <h3>Correo Electronico:</h3>
+        <h3>Género:</h3>
+        <h3>País:</h3>
+      </div>
     </section>
 
     <%- include('../partials/footer') %>
-</body>
-
+  </body>
+</html>

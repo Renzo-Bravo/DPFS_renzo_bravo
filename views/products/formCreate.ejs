@@ -1,77 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('../partials/head') %>
 
-<%- include('../partials/head') %>
-
-<body>
+  <body>
     <%- include('../partials/header') %>
 
     <main>
-        <h1 class="Editiontitle">¿Qué quiere vender?</h1>
-        <section class="formularyEdition1">
-            <form action="/products/create" method="post" class="formularyEdition" enctype="multipart/form-data">
-                 <div class="formularyLebel">
-                    <label for="titulo">Modelo:</label>
-                </div>
-                <input type="text" class="titleName" id="titulo" name="name">
+      <h1 class="Editiontitle">¿Qué quiere vender?</h1>
+      <section class="formularyEdition1">
+        <form
+          action="/products/create"
+          method="post"
+          class="formularyEdition"
+          enctype="multipart/form-data"
+        >
+          <div class="formularyLebel">
+            <label for="titulo">Modelo:</label>
+          </div>
+          <input type="text" class="titleName" id="titulo" name="name" />
 
-                 <div class="formularyLebel">
-                    <label for="brand">Marca:</label>
-                </div>
-                <input type="text" class="titleName" id="brand" name="brand">
+          <div class="formularyLebel">
+            <label for="brand">Marca:</label>
+          </div>
+          <input type="text" class="titleName" id="brand" name="brand" />
 
-                <div class="formularyLebel">
-                    <label for="image">Subir imagen:</label>
-                </div>
-                <input type="file" id="image" name="image" accept="image/*">
+          <div class="formularyLebel">
+            <label for="image">Subir imagen:</label>
+          </div>
+          <input type="file" id="image" name="image" accept="image/*" />
 
-                 <div class="formularyLebel">
-                    <label for="line">Linea:</label>
-                </div>
-                <input type="text" class="titleName" id="line" name="line">
+          <div class="formularyLebel">
+            <label for="line">Linea:</label>
+          </div>
+          <input type="text" class="titleName" id="line" name="line" />
 
-                <div class="formularyLebel">
-                    <label for="color">Color:</label>
-                </div>
-                
-                <select class="titleName" id="color" name="color">
-                    <option value="">--Selecciona un color--</option>
-                    <% colors.forEach(c => { %>
-                        <option value="<%= c.color %>"><%= c.color %></option>
-                    <% }) %>
-                </select>
+          <div class="formularyLebel">
+            <label for="color">Color:</label>
+          </div>
 
-                <div class="formularyLebel">
-                    <label for="year">Edad:</label>
-                </div>
-                <input type="text" class="titleName" id="year" name="category">
-                
-                <div class="formularyLebel">
-                    <label for="year">Género:</label>
-                </div>
-                <input type="text" class="titleName" id="gender" name="gender">
-    
-                <div class="formularyLebel">
-                    <label for="categoria">Tipo de bicicleta:</label>
-                </div>
-                <input type="text" class="titleName" id="categoria" name="type">
-    
-                <div class="formularyLebel">
-                    <label for="description">Descripción:</label>
-                </div>
-                <textarea name="description" id="description"></textarea>
+          <select class="titleName" id="color" name="color">
+            <option value="">--Selecciona un color--</option>
+            <% colors.forEach(c => { %>
+            <option value="<%= c.color %>"><%= c.color %></option>
+            <% }) %>
+          </select>
 
-                <div class="formularyLebel">
-                    <label for="price">Precio:</label>
-                </div>
-                <input type="number" id="precio" name="price" >
-                
-                <input type="submit" id="send" value="Guardar">
-            </form>
-        </section>
+          <div class="formularyLebel">
+            <label for="year">Edad:</label>
+          </div>
+          <input type="text" class="titleName" id="year" name="category" />
+
+          <div class="formularyLebel">
+            <label for="year">Género:</label>
+          </div>
+          <input type="text" class="titleName" id="gender" name="gender" />
+
+          <div class="formularyLebel">
+            <label for="categoria">Tipo de bicicleta:</label>
+          </div>
+          <input type="text" class="titleName" id="categoria" name="type" />
+
+          <div class="formularyLebel">
+            <label for="description">Descripción:</label>
+          </div>
+          <textarea name="description" id="description"></textarea>
+
+          <div class="formularyLebel">
+            <label for="price">Precio:</label>
+          </div>
+          <input type="number" id="precio" name="price" />
+
+          <input type="submit" id="send" value="Guardar" />
+        </form>
+      </section>
     </main>
 
-
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

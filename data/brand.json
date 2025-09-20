@@ -1,27 +1,27 @@
 [
- {
-    "id" : 1,
+  {
+    "id": 1,
     "nameBrand": "Olmo",
     "image": "Olmo.jpg"
- },
- {
-    "id" : 2,
+  },
+  {
+    "id": 2,
     "nameBrand": "Venzo",
     "image": "venzo.jpg"
- },
- {
-    "id" : 3,
+  },
+  {
+    "id": 3,
     "nameBrand": "Raleigh",
     "image": "raleigh.jpg"
- },
- {
-    "id" : 4,
+  },
+  {
+    "id": 4,
     "nameBrand": "Specialized",
     "image": "specialized.jpg"
- },
- {
-   "id" : 5,
-   "nameBrand": "Fire Bird",
-   "image": ""
- }
+  },
+  {
+    "id": 5,
+    "nameBrand": "Fire Bird",
+    "image": ""
+  }
 ]

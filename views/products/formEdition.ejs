@@ -1,85 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('../partials/head') %>
 
-<%- include('../partials/head') %>
-
-<body>
+  <body>
     <%- include('../partials/header') %>
 
     <main>
-        <section class="formularyEdition1">
-            <form action="/products/edition/<%= product.id %>?_method=put" method="post" class="formularyEdition" enctype="multipart/form-data">
-                <div class="formularyLebel">
-                    <label for="image">Subir imagen:</label>
-                </div>
-                <input type="file" id="image" name="image" accept="image/*">
-                <div>
-                    <% if (product.image) { %>
-                      <img id="preview" src="/images/<%= product.image %>" alt="Producto" style="width: 200px;">
-                    <% } else { %>
-                        <img id="preview" src="" alt="Producto" style="width: 200px;">
-                    <% } %>
-                </div>
+      <section class="formularyEdition1">
+        <form
+          action="/products/edition/<%= product.id %>?_method=put"
+          method="post"
+          class="formularyEdition"
+          enctype="multipart/form-data"
+        >
+          <div class="formularyLebel">
+            <label for="image">Subir imagen:</label>
+          </div>
+          <input type="file" id="image" name="image" accept="image/*" />
+          <div>
+            <% if (product.image) { %>
+            <img
+              id="preview"
+              src="/images/<%= product.image %>"
+              alt="Producto"
+              style="width: 200px"
+            />
+            <% } else { %>
+            <img id="preview" src="" alt="Producto" style="width: 200px" />
+            <% } %>
+          </div>
 
-                 <div class="formularyLebel">
-                    <label for="titulo">Modelo:</label>
-                </div>
-                <input type="text" class="titleName" id="titulo" name="name" value="<%= product.name %>">
+          <div class="formularyLebel">
+            <label for="titulo">Modelo:</label>
+          </div>
+          <input
+            type="text"
+            class="titleName"
+            id="titulo"
+            name="name"
+            value="<%= product.name %>"
+          />
 
-                 <div class="formularyLebel">
-                    <label for="brand">Marca:</label>
-                </div>
-                <input type="text" class="titleName" id="brand" name="brand" value="<%= product.brand %>">
+          <div class="formularyLebel">
+            <label for="brand">Marca:</label>
+          </div>
+          <input
+            type="text"
+            class="titleName"
+            id="brand"
+            name="brand"
+            value="<%= product.brand %>"
+          />
 
-                 <div class="formularyLebel">
-                    <label for="line">Linea:</label>
-                </div>
-                <input type="text" class="titleName" id="line" name="line" value="<%= product.line %>">
+          <div class="formularyLebel">
+            <label for="line">Linea:</label>
+          </div>
+          <input
+            type="text"
+            class="titleName"
+            id="line"
+            name="line"
+            value="<%= product.line %>"
+          />
 
-                <div class="formularyLebel">
-                    <label for="color">Color:</label>
-                </div>
+          <div class="formularyLebel">
+            <label for="color">Color:</label>
+          </div>
 
-                <select class="titleName" id="color" name="color">
-                    <option value="<%= product.color %>">--Selecciona un color--</option>
-                    <% colors.forEach(c => { %>
-                    <option value="<%= c.color %>"><%= product.color === c.color ? "selected" : "" %>>
-                        <%= c.color %>
-                    </option>
-                    <% }) %>
-                </select>
+          <select class="titleName" id="color" name="color">
+            <option value="<%= product.color %>">
+              --Selecciona un color--
+            </option>
+            <% colors.forEach(c => { %>
+            <option value="<%= c.color %>">
+              <%= product.color === c.color ? "selected" : "" %>> <%= c.color %>
+            </option>
+            <% }) %>
+          </select>
 
-                <div class="formularyLebel">
-                    <label for="year">Marca:</label>
-                </div>
-                <input type="text" class="titleName" id="year" name="year" value="<%= product.year %>">
-    
-                <div class="formularyLebel">
-                    <label for="categoria">Tipo de bicicleta:</label>
-                </div>
-                <input type="text" class="titleName" id="categoria" name="type" value="<%= product.type %>">
-    
-                <div class="formularyLebel">
-                    <label for="description">Descripción:</label>
-                </div>
-                <textarea name="description" id="description"><%= product.description %></textarea>
+          <div class="formularyLebel">
+            <label for="year">Marca:</label>
+          </div>
+          <input
+            type="text"
+            class="titleName"
+            id="year"
+            name="year"
+            value="<%= product.year %>"
+          />
 
-                <div class="formularyLebel">
-                    <label for="price">Precio:</label>
-                </div>
-                <input type="number" id="precio" name="price" value="<%= product.price %>">
+          <div class="formularyLebel">
+            <label for="categoria">Tipo de bicicleta:</label>
+          </div>
+          <input
+            type="text"
+            class="titleName"
+            id="categoria"
+            name="type"
+            value="<%= product.type %>"
+          />
 
-                <div class="formularyLebel">
-                    <label for="stock">Stock:</label>
-                </div>
-                <input type="range" id="stock" name="stock">
+          <div class="formularyLebel">
+            <label for="description">Descripción:</label>
+          </div>
+          <textarea name="description" id="description">
+<%= product.description %></textarea
+          >
 
-                <input type="submit" id="send" value="Guardar">
-            </form>
-        </section>
+          <div class="formularyLebel">
+            <label for="price">Precio:</label>
+          </div>
+          <input
+            type="number"
+            id="precio"
+            name="price"
+            value="<%= product.price %>"
+          />
+
+          <div class="formularyLebel">
+            <label for="stock">Stock:</label>
+          </div>
+          <input type="range" id="stock" name="stock" />
+
+          <input type="submit" id="send" value="Guardar" />
+        </form>
+      </section>
     </main>
 
-
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

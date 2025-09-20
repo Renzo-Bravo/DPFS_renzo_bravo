@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('../partials/headUsers') %>
 
-<%- include('../partials/headUsers') %>
-
-<body>
-
-    <%- include('../partials/headerLogAndReg', { link: '../users/register' , texto: 'Registrarse' }) %>
+  <body>
+    <%- include('../partials/headerLogAndReg', { link: '../users/register' ,
+    texto: 'Registrarse' }) %>
 
     <main>
-        <div class="logo">
-            <img src="/images/MoviGo.png" alt="">
-        </div>
-        
-        <section class="formulary">
-            <form action="url" method="get">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+      <div class="logo">
+        <img src="/images/MoviGo.png" alt="" />
+      </div>
 
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                
-                <a href="url">¿Has olvidado la contraseña?</a>
-                
-                <div class="sub">
-                    <button type="submit" id="input">Iniciar sesión</button>
-                </div>
-            </form>
-        </section>
+      <section class="formulary">
+        <form action="url" method="get">
+          <label for="email">Correo electrónico:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+          />
+
+          <label for="password">Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Contraseña"
+            required
+          />
+
+          <a href="url">¿Has olvidado la contraseña?</a>
+
+          <div class="sub">
+            <button type="submit" id="input">Iniciar sesión</button>
+          </div>
+        </form>
+      </section>
     </main>
-</body>
+  </body>
 </html>

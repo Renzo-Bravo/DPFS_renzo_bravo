@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <%- include('../partials/head') %>
-    
-<body>
+  <%- include('../partials/head') %>
+
+  <body>
     <%- include('../partials/header') %>
 
     <main>
-        <section class="containList">
-
-            <% products.forEach(prod => { %>
-                <article class="cardList">
-                    <a href="/" class="cardL">
-                        <img src="/images/products/<%= prod.image %>" alt="Ejemplo">
-                        <div class="cardDescription">
-                            <p class="cardInfo"><%= prod.name %></p>
-                            <p class="cardInfo"><%= prod.price %></p>
-                        </div>
-                        <div class="btnCardList">
-                            <a href="#">Comprar</a>
-                            <a href="/products/detail/<%= prod.id %>">Ver</a>
-                        </div>
-                    </a>
-                </article>
-            <% }) %>
-
-        </section>
+      <section class="containList">
+        <% products.forEach(prod => { %>
+        <article class="cardList">
+          <a href="/" class="cardL">
+            <img src="/images/products/<%= prod.image %>" alt="Ejemplo" />
+            <div class="cardDescription">
+              <p class="cardInfo"><%= prod.name %></p>
+              <p class="cardInfo"><%= prod.price %></p>
+            </div>
+            <div class="btnCardList">
+              <a href="#">Comprar</a>
+              <a href="/products/detail/<%= prod.id %>">Ver</a>
+            </div>
+          </a>
+        </article>
+        <% }) %>
+      </section>
     </main>
-    
-    <%- include('../partials/footer') %>
-</body>
-</html>
 
+    <%- include('../partials/footer') %>
+  </body>
+</html>

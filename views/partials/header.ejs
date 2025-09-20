@@ -1,29 +1,27 @@
 <!--Header home-->
 <header>
-    <div class="logo">
-        <img src="/images/MoviGo.png" alt="MoviGo Logo">
-    </div>
-    
-    <nav class="navegation">
-        <i class="bi bi-list" id="menu-toggle"></i>
-    </nav>
+  <div class="logo">
+    <img src="/images/MoviGo.png" alt="MoviGo Logo" />
+  </div>
 
-    <nav class="navegationDesk" id="menu">
-        <ul>
-            <li><i class="bi bi-search"></i></li>
-            <li><a href="/products/accesories">Accesorios</a></li>
-            <li><a href="/products/cart">Carrito</a></li>
-            <li><a href="/products/list">Lista</a></li>
-            <li><a href="/users/login">Iniciar sesión</a></li>
-            <li><a href="/users/profile">Perfil</a></li>
-        </ul>
-    </nav>
+  <nav class="navegation">
+    <i class="bi bi-list" id="menu-toggle"></i>
+  </nav>
+
+  <nav class="navegationDesk" id="menu">
+    <ul>
+      <li><i class="bi bi-search"></i></li>
+      <li><a href="/products/accesories">Accesorios</a></li>
+      <li><a href="/products/cart">Carrito</a></li>
+      <li><a href="/products/list">Lista</a></li>
+      <li><a href="/users/login">Iniciar sesión</a></li>
+      <li><a href="/users/profile">Perfil</a></li>
+    </ul>
+  </nav>
 </header>
 
 <script>
-document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.getElementById("menu-toggle").addEventListener("click", () => {
     document.getElementById("menu").classList.toggle("active");
-});
+  });
 </script>
-
-

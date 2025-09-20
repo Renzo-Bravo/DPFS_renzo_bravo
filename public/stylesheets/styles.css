@@ -5,8 +5,8 @@
 White
 */
 
-main .carrousel img{
-    border-radius: 12px;
+main .carrousel img {
+  border-radius: 12px;
 }
 
 /*main .cards .card{
@@ -33,52 +33,49 @@ main .cards .card .contentCard img{
 */
 
 main .cards .card {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    margin-bottom: 4%;
-    height: 90px;             
-    width: 100%;              
-    box-sizing: border-box;
-    border-radius: 12px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4%;
+  height: 90px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
 }
 
-main .cards .card .brandImg{
-    width: 10%;
+main .cards .card .brandImg {
+  width: 10%;
 }
 
-main .cards .card .brandImg img{
-    width: 100%;
+main .cards .card .brandImg img {
+  width: 100%;
 }
 
 main .cards .card .contentCard {
-    width: 30%;               
-    margin-right: 4%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
+  width: 30%;
+  margin-right: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
 
 main .cards .card .contentCard img {
-    max-height: 70px;         
-    max-width: 100%;
-    object-fit: contain;
+  max-height: 70px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
-@media screen and (min-width: 1024px){
-    main .carrousel{
-        margin-top: 4%;
-        width: 50%;
-    }
+@media screen and (min-width: 1024px) {
+  main .carrousel {
+    margin-top: 4%;
+    width: 50%;
+  }
 
-    main .carrousel img{
-        width: 100%;
-        border-radius: 12px;
-    }
-
-
-    
+  main .carrousel img {
+    width: 100%;
+    border-radius: 12px;
+  }
 }
