@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Renzo",
+    "age": 22,
+    "mail": "ren@gmail.com",
+    "gender": "hombre",
+    "country": "Argentina",
+    "imgProfile": "profile.jpg"
+  }
+]

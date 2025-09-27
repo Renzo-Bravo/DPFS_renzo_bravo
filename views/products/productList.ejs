@@ -9,15 +9,15 @@
       <section class="containList">
         <% products.forEach(prod => { %>
         <article class="cardList">
-          <a href="/" class="cardL">
+          <a href="/products/detail/<%= prod.id %>" class="cardL">
             <img src="/images/products/<%= prod.image %>" alt="Ejemplo" />
             <div class="cardDescription">
-              <p class="cardInfo"><%= prod.name %></p>
-              <p class="cardInfo"><%= prod.price %></p>
+              <p><%= prod.name %></p>
+              <p><%= prod.price %></p>
             </div>
             <div class="btnCardList">
-              <a href="#">Comprar</a>
-              <a href="/products/detail/<%= prod.id %>">Ver</a>
+              <a class="btnCard" href="#">Comprar</a>
+              <a class="btnCard" href="/products/detail/<%= prod.id %>">Ver</a>
             </div>
           </a>
         </article>

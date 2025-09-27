@@ -15,6 +15,10 @@
   margin-top: 10%;
 }
 
+.nose {
+  color: red;
+}
+
 .dateProfile {
   width: 100%;
   display: flex;

@@ -1,15 +1,14 @@
 [
-  {
-    "id": 4,
-    "name": "1222",
-    "brand": "22",
-    "category": "1232123",
-    "color": "Rojo",
-    "gender": "13132",
-    "line": "2121",
-    "image": "image-1757906451196.jpg",
-    "type": "12312312",
-    "description": "12312",
-    "price": "3123123"
-  }
+ {
+  "id": 5,
+  "name": "Bicicleta Rodado 29",
+  "brand": "Olmo",
+  "color": "Azul",
+  "line": "3123123",
+  "image": "image-1758494736598.jpg",
+  "type": "MTB",
+  "description": "12312",
+  "price": "200.000",
+  "year": "Olmo"
+ }
 ]

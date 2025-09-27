@@ -11,7 +11,9 @@ const usersCtrl = {
     res.render("users/register", { title: "Express" });
   },
   profile: function (req, res, next) {
-    res.render("users/profile");
+    const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
+    console.log(users[0].name, "holaaaa")
+    res.render("users/profile", { users });
   },
 };
 

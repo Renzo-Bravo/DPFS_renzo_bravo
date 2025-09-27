@@ -7,6 +7,7 @@ White
 
 main .titleProd {
   padding: 2% 2% 0;
+  margin: 2% 0 2% 0;
   text-align: center;
 }
 
@@ -122,6 +123,7 @@ main .comentaryUsers .publicComentary {
 @media screen and (min-width: 1024px) {
   main .PContain {
     width: 100%;
+    padding: 2% 0 2% 0;
     display: flex;
   }
 
