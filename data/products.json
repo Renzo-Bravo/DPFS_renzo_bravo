@@ -1,14 +1,25 @@
 [
  {
-  "id": 5,
-  "name": "Bicicleta Rodado 29",
-  "brand": "Olmo",
+  "id": 1,
+  "brand": "Nissan",
+  "category": "Ruta-Carretera",
+  "color": "Amarillo",
+  "description": "Rapido",
+  "gender": "Masculino",
+  "price": "22222",
+  "size": "M",
+  "image": "image-1759030368613.jpg"
+ },
+ {
+  "id": 2,
+  "brand": "Alpine",
+  "category": "Ruta-Carretera",
   "color": "Azul",
-  "line": "3123123",
-  "image": "image-1758494736598.jpg",
-  "type": "MTB",
-  "description": "12312",
-  "price": "200.000",
-  "year": "Olmo"
+  "description": "sssssssssssssssssssssss",
+  "gender": "Masculino",
+  "model": "RS2025",
+  "price": "22",
+  "size": "M",
+  "image": "image-1759030748535.jpeg"
  }
 ]

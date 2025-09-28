@@ -6,6 +6,8 @@ const path = require("path");
 const categoriesPath = path.join(__dirname, "../", "data", "category.json");
 const colorsPath = path.join(__dirname, "../", "data", "colors.json");
 const productsPath = path.join(__dirname, "../", "data", "products.json");
+const sizePath = path.join(__dirname, "../", "data", "size.json");
+const genderPath = path.join(__dirname, "../", "data", "gender.json")
 
 const productsCtrl = {
   accesories: function (req, res, next) {
@@ -20,24 +22,24 @@ const productsCtrl = {
   createForm: function (req, res, next) {
     const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"));
     const colors = JSON.parse(fs.readFileSync(colorsPath, "utf-8"));
-    res.render("products/formCreate", { categories, colors });
+    const size = JSON.parse(fs.readFileSync(sizePath, "utf-8"));
+    const gender = JSON.parse(fs.readFileSync(genderPath, "utf-8"))
+    res.render("products/formCreate", { categories, colors, gender, size });
   },
 
   createProduct: function (req, res, next) {
     const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
     const newProduct = {
       id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
-      name: req.body.name,
       brand: req.body.brand,
       category: req.body.category,
       color: req.body.color,
-      gender: req.body.gender,
-      line: req.body.line,
-      image: req.file && req.file.filename ? req.file.filename : "images.png",
-      year: req.body.year,
-      type: req.body.type,
       description: req.body.description,
+      gender: req.body.gender,
+      model: req.body.model,
       price: req.body.price,
+      size: req.body.size,
+      image: req.file && req.file.filename ? req.file.filename : "images.png",
     };
 
     products.push(newProduct);
@@ -71,15 +73,19 @@ const productsCtrl = {
   },
 
   editionForm: function (req, res, next) {
-    const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"));
+    const category = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"));
     const colors = JSON.parse(fs.readFileSync(colorsPath, "utf-8"));
     const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
+    const size = JSON.parse(fs.readFileSync(sizePath, "utf-8"));
+    const gender = JSON.parse(fs.readFileSync(genderPath, "utf-8"))
     const prod = products.find((prod) => {
       return prod.id == req.params.id;
     });
-    res.render("products/formEdition.ejs", {
+    res.render("products/formEdition.ejs", { 
       product: prod,
-      categories,
+      gender,
+      size,
+      category,
       colors,
     });
   },
@@ -94,12 +100,10 @@ const productsCtrl = {
         product.color = req.body.color;
         product.description = req.body.description;
         product.gender = req.body.gender;
-        product.year = req.body.year;
-        product.line = req.body.line;
-        product.name = req.body.name;
-        product.image = req.file?.filename || product.image;
+        product.model = req.body.model;
         product.price = req.body.price;
-        product.type = req.body.type;
+        product.size = req.body.size;
+        product.image = req.file?.filename || product.image;
       }
     });
 

@@ -6,7 +6,6 @@
     <%- include('../partials/header') %>
 
     <main>
-      <h1 class="Editiontitle">¿Qué quiere vender?</h1>
       <section class="formularyEdition1">
         <form
           action="/products/create"
@@ -15,25 +14,20 @@
           enctype="multipart/form-data"
         >
           <div class="formularyLebel">
-            <label for="titulo">Modelo:</label>
+            <label for="image">Subir Imagen:</label>
           </div>
-          <input type="text" class="titleName" id="titulo" name="name" />
+          <input type="file" class="image" id="image" name="image" accept="image/*" />
+
+          <div class="formularyLebel">
+            <label for="model">Modelo:</label>
+          </div>
+          <input type="text" class="titleName" id="model" name="model" />
 
           <div class="formularyLebel">
             <label for="brand">Marca:</label>
           </div>
-          <input type="text" class="titleName" id="brand" name="brand" />
-
-          <div class="formularyLebel">
-            <label for="image">Subir imagen:</label>
-          </div>
-          <input type="file" id="image" name="image" accept="image/*" />
-
-          <div class="formularyLebel">
-            <label for="line">Linea:</label>
-          </div>
-          <input type="text" class="titleName" id="line" name="line" />
-
+          <input type="text" id="brand" name="brand"/>
+          
           <div class="formularyLebel">
             <label for="color">Color:</label>
           </div>
@@ -45,20 +39,38 @@
             <% }) %>
           </select>
 
-          <div class="formularyLebel">
-            <label for="year">Edad:</label>
+           <div class="formularyLebel">
+            <label for="category">Tipo de bicicleta:</label>
           </div>
-          <input type="text" class="titleName" id="year" name="category" />
+
+          <select class="titleName" id="category" name="category">
+            <option value="">--Selecciona un categoria--</option>
+            <% categories.forEach(categ => { %>
+            <option value="<%= categ.typeBike %>"><%= categ.typeBike %></option>
+            <% }) %>
+          </select>
 
           <div class="formularyLebel">
-            <label for="year">Género:</label>
+            <label for="size">Talle:</label>
           </div>
-          <input type="text" class="titleName" id="gender" name="gender" />
+
+          <select class="titleName" id="size" name="size">
+            <option value="">--Selecciona un talle--</option>
+            <% size.forEach(s => { %>
+            <option value="<%= s.size %>"><%= s.size %></option>
+            <% }) %>
+          </select>
 
           <div class="formularyLebel">
-            <label for="categoria">Tipo de bicicleta:</label>
+            <label for="gender">Género:</label>
           </div>
-          <input type="text" class="titleName" id="categoria" name="type" />
+
+          <select class="titleName" id="gender" name="gender">
+            <option value="">--Selecciona un género--</option>
+            <% gender.forEach(g => { %>
+            <option value="<%= g.gender %>"><%= g.gender %></option>
+            <% }) %>
+          </select>
 
           <div class="formularyLebel">
             <label for="description">Descripción:</label>
