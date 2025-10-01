@@ -1,16 +1,5 @@
 [
  {
-  "id": 1,
-  "brand": "Nissan",
-  "category": "Ruta-Carretera",
-  "color": "Amarillo",
-  "description": "Rapido",
-  "gender": "Masculino",
-  "price": "22222",
-  "size": "M",
-  "image": "image-1759030368613.jpg"
- },
- {
   "id": 2,
   "brand": "Alpine",
   "category": "Ruta-Carretera",
