@@ -8,11 +8,12 @@
 
     <main>
       <div class="logo">
-        <img src="/images/MoviGo.png" alt="" />
+        <img src="/images/MoviGo.png" alt="Logo" />
       </div>
 
       <section class="formulary">
-        <form action="url" method="get">
+
+        <form action="/users/register" method="post" enctype="multipart/form-data">
           <label for="name">Nombre:</label>
           <input
             type="text"
@@ -21,6 +22,9 @@
             placeholder="Nombre"
             required
           />
+          
+          <label for="image">Foto de perfil:</label>
+          <input type="file" class="image" id="image" name="profile" accept="image/*" />
 
           <label for="surname">Apellido:</label>
           <input
@@ -40,6 +44,14 @@
             <option value="1">Otro</option>
             <option value="2">Masculino</option>
             <option value="3">Femenino</option>
+          </select>
+          
+          <label for="select">Rol</label>
+          <select name="select" id="select">
+            <option value="">Seleccionar</option>
+            <option value="1">Admin</option>
+            <option value="2">Test</option>
+            <option value="3">Usuario</option>
           </select>
 
           <label for="email">Correo electrónico:</label>

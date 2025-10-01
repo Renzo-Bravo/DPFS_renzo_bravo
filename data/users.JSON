@@ -1,7 +1,8 @@
 [
   {
     "name": "Renzo",
-    "age": 22,
+    "surname" : "Bravo Gomez",
+    "date": "2025-10-05",
     "mail": "ren@gmail.com",
     "gender": "hombre",
     "country": "Argentina",

@@ -15,6 +15,14 @@ const usersCtrl = {
     console.log(users[0].name, "holaaaa")
     res.render("users/profile", { users });
   },
+  processLogin: (req, res) => {
+    res.redirect("/")
+  },
+  processRegister: (req, res) => {
+    console.log(req.file)
+    console.log(req.body)
+    res.redirect("/products/list")
+  }
 };
 
 module.exports = usersCtrl;
