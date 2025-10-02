@@ -7,15 +7,15 @@
 
     <section class="sectionProfile">
       <div class="imgProfile">
-        <img src="../images/profile/profile.jpg" alt="Perfil" />
+        <img src="/images/profile/<%= user.image ? user.image : "profile.jpg" %>" alt="Perfil" />
       </div>
 
       <div class="dateProfile">
-        <h3>Nombre:</h3><%= users.name %>
-        <h3>Edad:</h3><%= users.age %>
-        <h3>Correo Electronico:</h3>
-        <h3>Género:</h3>
-        <h3>País:</h3>
+        <h3>Nombre:</h3><%= user.name %>
+        <h3>Apellido:</h3><%= user.surname %>
+        <h3>Correo Electronico:</h3><%= user.email %>
+        <h3>Género:</h3><%= user.gender %>
+        <h3>Rol:</h3><%= user.rol %>
       </div>
     </section>
 

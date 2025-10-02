@@ -13,49 +13,13 @@
  {
   "id": 2,
   "checkbox": "on",
-  "date": "2025-10-30",
-  "email": "rex@gmail.com",
-  "gender": "1",
-  "name": "Renzo",
-  "rol": "2",
-  "surname": "Bravo Gomez",
-  "password": "12345678",
-  "image": "profileprofileImg-1759375451962.webp"
- },
- {
-  "id": 3,
-  "checkbox": "on",
-  "date": "2002-12-10",
-  "email": "renzobravo@gmail.com",
-  "gender": "2",
-  "name": "Renzo",
-  "rol": "1",
-  "surname": "Bravo Gomez",
-  "password": "$2b$10$mCpASbjUMO4aCZI0J5BNDuYWVaSDJItKskW8crxCmitsQj.VNdsam",
-  "image": "profileprofileImg-1759376207575.jpg"
- },
- {
-  "id": 4,
-  "checkbox": "on",
-  "date": "2025-10-26",
-  "email": "renzo@gmail.com",
-  "gender": "2",
-  "name": "Renzo",
-  "rol": "1",
-  "surname": "Bravo Gomez",
-  "password": "$2b$10$M1ptJ2aoxOEebk.xUuRnz.9mvopuTLEd.iPMFM0T70NCPHLSgjA0S",
-  "image": "profile.jpg"
- },
- {
-  "id": 5,
-  "checkbox": "on",
-  "date": "2025-10-01",
+  "date": "2025-10-04",
   "email": "admin1@gmail.com",
-  "gender": "otro",
-  "name": "Cuenta",
+  "gender": "male",
+  "name": "Renzo",
   "rol": "admin",
-  "surname": "Test",
-  "password": "$2b$10$.af2WpZPUL8oLWRIkNmC.ODq1.IYih1G9p1ia/G4O4DHrDHQvAe62",
-  "image": "profile.jpg"
+  "surname": "Bravo Gomez",
+  "password": "$2b$10$4NniHGCHUL/u8cFec6oGaecvXnI6Z3JJeOx3mp5T02gKcTGMQzHvC",
+  "image": "profileprofileImg-1759434931146.jpg"
  }
 ]

@@ -14,8 +14,8 @@ const usersCtrl = {
   },
   profile: function (req, res, next) {
     const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
-    console.log(users[0].name, "holaaaa");
-    res.render("users/profile", { users });
+    console.log(req.session);
+    res.render("users/profile", {user: req.session.userLogged});
   },
   processLogin: (req, res) => {
     const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
@@ -23,10 +23,14 @@ const usersCtrl = {
     if (userFound) {
       const passOk = bcrypt.compareSync(req.body.password, userFound.password);
       if (passOk) {
-        res.render("USUARIO ENCONTRADO");
+        req.session.userLogged = userFound;
+        if (req.body.rememberMe == "on"){
+          res.cookie("email", userFound.email,{maxAge: 60*1000*60})
+        }
+        return res.redirect("/users/profile")
       }
       else{
-        res.render("NO ENCONTRADO")
+        return res.render("NO ENCONTRADO")
       }
     } 
   },

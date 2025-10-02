@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var methodOverride = require("method-override");
 var session = require("express-session");
+const userLogged = require("./middlewares/userLogged")
 
 var adminRouter = require("./routes/admin");
 var indexRouter = require("./routes/index");
@@ -25,9 +26,11 @@ app.use(
   })
 );
 app.use(logger("dev"));
+app.use(cookieParser());
+app.use(userLogged);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
