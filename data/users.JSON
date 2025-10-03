@@ -21,5 +21,17 @@
   "surname": "Bravo Gomez",
   "password": "$2b$10$4NniHGCHUL/u8cFec6oGaecvXnI6Z3JJeOx3mp5T02gKcTGMQzHvC",
   "image": "profileprofileImg-1759434931146.jpg"
+ },
+ {
+  "id": 3,
+  "checkbox": "on",
+  "date": "2002-12-10",
+  "email": "admin2@gmail.com",
+  "gender": "male",
+  "name": "Test",
+  "rol": "test",
+  "surname": "Test",
+  "password": "$2b$10$fL/mMtNp/TPGFLnYHc5QSuzzYDi4ma0jYTq/vZ/Oyq7WNZziTxF3W",
+  "image": "profile.jpg"
  }
 ]

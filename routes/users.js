@@ -1,19 +1,22 @@
 var express = require("express");
 const usersCtrl = require("../controllers/usersCtrl");
 const upload = require("../middlewares/multerProfile.js");
+const logged = require("../middlewares/logged.js");
+const guest = require("../middlewares/guest.js");
+
 var router = express.Router();
 
 /* GET login page */
-router.get("/login", usersCtrl.login);
+router.get("/login", guest,usersCtrl.login);
 /*post FORM*/
-router.post("/login", usersCtrl. processLogin);
+router.post("/login", guest,usersCtrl. processLogin);
 
 /* GET register page */
-router.get("/register", usersCtrl.register);
+router.get("/register", guest,usersCtrl.register);
 /*post FORM*/
-router.post("/register",upload.single("profile") ,usersCtrl. processRegister);
+router.post("/register", guest,upload.single("profile"), usersCtrl. processRegister);
 
 /* Get profile page */
-router.get("/profile", usersCtrl.profile);
+router.get("/profile", logged, usersCtrl.profile);
 
 module.exports = router;

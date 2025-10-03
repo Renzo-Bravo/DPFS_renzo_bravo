@@ -14,7 +14,6 @@ const usersCtrl = {
   },
   profile: function (req, res, next) {
     const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
-    console.log(req.session);
     res.render("users/profile", {user: req.session.userLogged});
   },
   processLogin: (req, res) => {
@@ -48,8 +47,6 @@ const usersCtrl = {
       password: bcrypt.hashSync(req.body.password, 10),
       image: req.file && req.file.filename ? req.file.filename : "profile.jpg",
     };
-    console.log(newUser);
-
     users.push(newUser);
     const usersJSON = JSON.stringify(users, null, " ");
     fs.writeFileSync(usersPath, usersJSON);
