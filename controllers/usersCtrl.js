@@ -7,14 +7,21 @@ const usersPath = path.join(__dirname, "../", "data", "users.json");
 
 const usersCtrl = {
   login: function (req, res, next) {
-    res.render("users/login", { title: "Express" });
+    res.render("users/login");
   },
+
+  logout: function (req, res) {
+    req.session.destroy()
+    res.clearCookie("email")
+    res.redirect("/")
+  },
+
   register: function (req, res, next) {
-    res.render("users/register", { title: "Express" });
+    res.render("users/register");
   },
   profile: function (req, res, next) {
     const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
-    res.render("users/profile", {user: req.session.userLogged});
+    res.render("users/profile", { user: req.session.userLogged });
   },
   processLogin: (req, res) => {
     const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
@@ -23,15 +30,14 @@ const usersCtrl = {
       const passOk = bcrypt.compareSync(req.body.password, userFound.password);
       if (passOk) {
         req.session.userLogged = userFound;
-        if (req.body.rememberMe == "on"){
-          res.cookie("email", userFound.email,{maxAge: 60*1000*60})
+        if (req.body.rememberMe == "on") {
+          res.cookie("email", userFound.email, { maxAge: 60 * 1000 * 60 });
         }
-        return res.redirect("/users/profile")
+        return res.redirect("/users/profile");
+      } else {
+        return res.render("NO ENCONTRADO");
       }
-      else{
-        return res.render("NO ENCONTRADO")
-      }
-    } 
+    }
   },
   processRegister: (req, res) => {
     const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));

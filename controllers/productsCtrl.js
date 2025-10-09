@@ -16,7 +16,7 @@ const productsCtrl = {
 
   cart: function (req, res, next) {
     const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
-    res.render("products/productCart", { title: "Express" });
+    res.render("products/productCart");
   },
 
   createForm: function (req, res, next) {

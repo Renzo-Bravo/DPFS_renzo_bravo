@@ -11,6 +11,9 @@ router.get("/login", guest,usersCtrl.login);
 /*post FORM*/
 router.post("/login", guest,usersCtrl. processLogin);
 
+/* */
+router.get("/logout", usersCtrl. logout);
+
 /* GET register page */
 router.get("/register", guest,usersCtrl.register);
 /*post FORM*/
