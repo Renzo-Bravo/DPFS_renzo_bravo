@@ -114,7 +114,7 @@ const productsCtrl = {
   },
 
   list: function (req, res, next) {
-    const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
+    const productsOld = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
     res.render("products/productList", { products });
   },
 };
