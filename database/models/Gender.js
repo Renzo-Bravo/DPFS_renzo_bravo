@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const config = {
-    tableName: "genderss",
+    tableName: "gender",
     timestamps: false,
   };
 

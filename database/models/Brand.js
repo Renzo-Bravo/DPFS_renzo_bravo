@@ -8,9 +8,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     nameBrand: {
       type: DataTypes.STRING(100),
+      allowNull: false,
     },
     image: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
   };
 

@@ -4,34 +4,60 @@ module.exports = (sequelize, DataTypes) => {
   const cols = {
     id: {
       primaryKey: true,
+      autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED,
     },
     brand: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: "brands",
+        key: "id",
+      },
     },
     category_id: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: "categories",
+        key: "id",
+      },
     },
     color_id: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: "colors",
+        key: "id",
+      },
+    },
+    gender_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      references: {
+        model: "gender",
+        key: "id",
+      },
+    },
+    size_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      references: {
+        model: "size",
+        key: "id",
+      },
     },
     description: {
       type: DataTypes.TEXT,
-    },
-    gender_id: {
-      type: DataTypes.STRING(100),
     },
     model: {
       type: DataTypes.STRING(100),
     },
     price: {
       type: DataTypes.INTEGER.UNSIGNED,
-    },
-    size_id: {
-      type: DataTypes.STRING(10),
+      allowNull: false,
     },
     image: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
   };
 
@@ -41,6 +67,14 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const Product = sequelize.define(alias, cols, config);
+
+  Product.associate = (models) => {
+    Product.belongsTo(models.Brands, { foreignKey: "brans_id", as: "brand" });
+    Product.belongsTo(models.Category, { foreignKey: "category_id", as: "category" });
+    Product.belongsTo(models.Color, { foreignKey: "color_id", as: "color" });
+    Product.belongsTo(models.Gender, { foreignKey: "gender_id", as: "gender" });
+    Product.belongsTo(models.Size, { foreignKey: "size_id", as: "size" });
+  };
 
   return Product;
 };

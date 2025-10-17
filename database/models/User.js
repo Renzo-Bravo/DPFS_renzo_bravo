@@ -1,3 +1,5 @@
+const Gender = require("./Gender");
+
 module.exports = (sequelize, DataTypes) => {
   const alias = "Users";
 
@@ -8,24 +10,39 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: {
       type: DataTypes.STRING(100),
+      allowNull: false,
     },
     surname: {
       type: DataTypes.STRING(100),
+      allowNull: false,
     },
     date: {
       type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
     },
     rol: {
       type: DataTypes.STRING(10),
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING(100),
+      allowNull: false,
+      isUnique: true,
+      validate: {
+        isEmail: true,
+      },
     },
     password: {
       type: DataTypes.STRING(200),
+      allowNull: false,
     },
-    checkbox: {
-      type: DataTypes.STRING(100),
+    gender_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: "gender",
+        key: "id",
+      },
     },
     image: {
       type: DataTypes.TEXT,
@@ -38,6 +55,10 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const Users = sequelize.define(alias, cols, config);
+
+  Users.associate = (models) => {
+    Users.belongsTo(models.Gender, { foreignKey: "gender_id", as: "gender" });
+  };
 
   return Users;
 };
