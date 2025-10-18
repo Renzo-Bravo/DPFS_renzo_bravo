@@ -8,6 +8,7 @@ const colorsPath = path.join(__dirname, "../", "data", "colors.json");
 const productsPath = path.join(__dirname, "../", "data", "products.json");
 const sizePath = path.join(__dirname, "../", "data", "size.json");
 const genderPath = path.join(__dirname, "../", "data", "gender.json")
+const db = require("../database/models/index")
 
 const productsCtrl = {
   accesories: function (req, res, next) {
@@ -113,9 +114,10 @@ const productsCtrl = {
     res.redirect("/products/detail/" + req.params.id);
   },
 
-  list: function (req, res, next) {
-    const productsOld = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
-    res.render("products/productList", { products });
+  list: async function (req, res, next) {
+    const products = await db.products.findAll(); 
+    //const productsOld = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
+    res.json(products);
   },
 };
 

@@ -7,7 +7,7 @@ module.exports = {
       [
         {
           id: 2,
-          brand: "",
+          brand_id: 1,
           category_id: 2,
           color_id: 1,
           description: "sssssssssssssssssssssss",
