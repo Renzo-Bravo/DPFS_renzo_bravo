@@ -1,22 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Size";
+  const alias = "Sale";
 
   const cols = {
     id: {
       primaryKey: true,
       type: DataTypes.INTEGER.UNSIGNED,
     },
-    size: {
-      type: DataTypes.STRING(50),
+    active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue : true,
     },
   };
 
   const config = {
-    tableName: "size",
+    tableName: "sale",
     timestamps: false,
   };
 
-  const Size = sequelize.define(alias, cols, config);
+  const Sale = sequelize.define(alias, cols, config);
 
-  return Size;
+  return Sale;
 };

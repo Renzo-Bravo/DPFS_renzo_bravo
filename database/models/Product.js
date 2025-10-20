@@ -59,6 +59,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    sale_id: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+      references: {
+        model: "sale",
+        key: "id",
+      },
+    },
   };
 
   const config = {
@@ -68,11 +76,15 @@ module.exports = (sequelize, DataTypes) => {
 
   const Product = sequelize.define(alias, cols, config);
 
+
+  //Los alias por ahora en español 
+
   Product.associate = (models) => {
     Product.belongsTo(models.Brand, { foreignKey: "brand_id", as: "marca" });
     Product.belongsTo(models.Category, { foreignKey: "category_id", as: "categoria" });
     Product.belongsTo(models.Color, { foreignKey: "color_id", as: "colores" });
     Product.belongsTo(models.Gender, { foreignKey: "gender_id", as: "genero" });
+    Product.belongsTo(models.Sale, {foreignKey: "sale_id", as: "oferta"})
     Product.belongsTo(models.Size, { foreignKey: "size_id", as: "talle" });
   };
 

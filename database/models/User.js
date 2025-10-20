@@ -1,5 +1,3 @@
-const Gender = require("./Gender");
-
 module.exports = (sequelize, DataTypes) => {
   const alias = "Users";
 

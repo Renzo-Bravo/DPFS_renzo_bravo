@@ -16,6 +16,7 @@ module.exports = {
           price: "22",
           size_id: 1,
           image: "image-1759030748535.jpeg",
+          sale_id: 1,
         },
       ],
       {}
