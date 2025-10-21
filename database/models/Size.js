@@ -12,7 +12,11 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const config = {
+<<<<<<< HEAD
     tableName: "sizes",
+=======
+    tableName: "size",
+>>>>>>> 44c6d4c46823914186f0cf1c3b9888ea326ee203
     timestamps: false,
   };
 

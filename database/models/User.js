@@ -15,7 +15,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     date: {
+<<<<<<< HEAD
       type: DataTypes.DATE,
+=======
+      type: DataTypes.INTEGER.UNSIGNED,
+>>>>>>> 44c6d4c46823914186f0cf1c3b9888ea326ee203
       allowNull: false,
     },
     rol: {
@@ -55,7 +59,11 @@ module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define(alias, cols, config);
 
   Users.associate = (models) => {
+<<<<<<< HEAD
     Users.belongsTo(models.Genders, { foreignKey: "gender_id", as: "gender" });
+=======
+    Users.belongsTo(models.Gender, { foreignKey: "gender_id", as: "gender" });
+>>>>>>> 44c6d4c46823914186f0cf1c3b9888ea326ee203
   };
 
   return Users;
