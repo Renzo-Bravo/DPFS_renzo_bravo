@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+      <main>
+        <section class="formularyEdition1">
+          <form action="/products/edition/<%= product.id %>?_method=put" method="post" class="formularyEdition"
+            enctype="multipart/form-data">
+            <div class="formularyLebel">
+              <label for="image">Subir imagen:</label>
+            </div>
+            <input type="file" id="image" name="image" accept="image/*" />
+            <div>
+              <% if (product.image) { %>
+                <img id="preview" src="/images/<%= product.image %>" alt="Producto" style="width: 200px" />
+                <% } else { %>
+                  <img id="preview" src="" alt="Producto" style="width: 200px" />
+                  <% } %>
+            </div>
+
+            <div class="formularyLebel">
+              <label for="model">Modelo:</label>
+            </div>
+            <input type="text" class="titleName" id="titulo" name="model" value="<%= product.model %>" />
+
+            <div class="formularyLebel">
+              <label for="brand">Marca:</label>
+            </div>
+            <input type="text" class="titleName" id="brand" name="brand" value="<%= product.brand %>" />
+
+            <div class="formularyLebel">
+              <label for="color">Color:</label>
+            </div>
+
+            <select class="titleName" id="color" name="color">
+              <% colors.forEach(c=> { %>
+                <option value="<%= c.color %>" <%=product.color===c.color ? "selected" : "" %>>
+                  <%= c.color %>
+                </option>
+                <% }) %>
+            </select>
+
+            <div class="formularyLebel">
+              <label for="category">Tipo de bicicleta:</label>
+            </div>
+
+            <select class="titleName" id="category" name="category">
+              <% category.forEach(categ=> { %>
+                <option value="<%= categ.typeBike %>" <%=product.typeBike===categ.typeBike ? "selected" : "" %>>
+                  <%= categ.typeBike %>
+                </option>
+                <% }) %>
+            </select>
+
+             <div class="formularyLebel">
+              <label for="size">Talle:</label>
+            </div>
+
+            <select class="titleName" id="size" name="size">
+              <% size.forEach(s=> { %>
+                <option value="<%= s.size %>" <%=product.size===s.size ? "selected" : "" %>>
+                  <%= s.size %>
+                </option>
+                <% }) %>
+            </select>
+
+             <div class="formularyLebel">
+              <label for="gender">Género:</label>
+            </div>
+
+            <select class="titleName" id="gender" name="gender">
+              <% gender.forEach(g=> { %>
+                <option value="<%= g.gender %>" <%=product.gender===g.gender ? "selected" : "" %>>
+                  <%= g.gender %>
+                </option>
+                <% }) %>
+            </select>
+
+            <div class="formularyLebel">
+              <label for="description">Descripción:</label>
+            </div>
+            <textarea name="description" id="description">
+              <%= product.description %></textarea>
+
+
+            <div class="formularyLebel">
+              <label for="price">Precio:</label>
+            </div>
+            <input type="number" id="precio" name="price" value="<%= product.price %>" />
+
+            <input type="submit" id="send" value="Guardar" />
+          </form>
+        </section>
+      </main>
+
+      <%- include('../partials/footer') %>
+  </body>
+
+</html>
