@@ -7,8 +7,8 @@ const categoriesPath = path.join(__dirname, "../", "data", "category.json");
 const colorsPath = path.join(__dirname, "../", "data", "colors.json");
 const productsPath = path.join(__dirname, "../", "data", "products.json");
 const sizePath = path.join(__dirname, "../", "data", "size.json");
-const genderPath = path.join(__dirname, "../", "data", "gender.json")
-const db = require("../database/models/index")
+const genderPath = path.join(__dirname, "../", "data", "gender.json");
+const db = require("../database/models/index.js");
 
 const productsCtrl = {
   accesories: function (req, res, next) {
@@ -24,7 +24,7 @@ const productsCtrl = {
     const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"));
     const colors = JSON.parse(fs.readFileSync(colorsPath, "utf-8"));
     const size = JSON.parse(fs.readFileSync(sizePath, "utf-8"));
-    const gender = JSON.parse(fs.readFileSync(genderPath, "utf-8"))
+    const gender = JSON.parse(fs.readFileSync(genderPath, "utf-8"));
     res.render("products/formCreate", { categories, colors, gender, size });
   },
 
@@ -78,11 +78,11 @@ const productsCtrl = {
     const colors = JSON.parse(fs.readFileSync(colorsPath, "utf-8"));
     const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
     const size = JSON.parse(fs.readFileSync(sizePath, "utf-8"));
-    const gender = JSON.parse(fs.readFileSync(genderPath, "utf-8"))
+    const gender = JSON.parse(fs.readFileSync(genderPath, "utf-8"));
     const prod = products.find((prod) => {
       return prod.id == req.params.id;
     });
-    res.render("products/formEdition.ejs", { 
+    res.render("products/formEdition.ejs", {
       product: prod,
       gender,
       size,
@@ -114,10 +114,13 @@ const productsCtrl = {
     res.redirect("/products/detail/" + req.params.id);
   },
 
-  list: async function (req, res, next) {
-    const products = await db.products.findAll(); 
-    //const productsOld = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
-    res.json(products);
+  list: async function (req, res) {
+    try {
+      const products = await db.Product.findAll();
+      res.render("products/productList.ejs", {products});
+    } catch (error) {
+      console.log(error => console.log(error));
+    }
   },
 };
 
