@@ -59,14 +59,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    sale_id: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-      references: {
-        model: "sales",
-        key: "id",
-      },
-    },
   };
 
   const config = {
@@ -81,7 +73,6 @@ module.exports = (sequelize, DataTypes) => {
     Product.belongsTo(models.Category, { foreignKey: "category_id", as: "categoria" });
     Product.belongsTo(models.Colors, { foreignKey: "color_id", as: "colores" });
     Product.belongsTo(models.Genders, { foreignKey: "gender_id", as: "genero" });
-    Product.belongsTo(models.Sale, { foreignKey: "sale_id", as: "oferta" });
     Product.belongsTo(models.Size, { foreignKey: "size_id", as: "talle" });
   };
 

@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
+      autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER.UNSIGNED,
     },

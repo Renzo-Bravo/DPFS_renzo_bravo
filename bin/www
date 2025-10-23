@@ -28,7 +28,7 @@ var server = http.createServer(app);
 const db = require("../database/models/index.js");
 
 server.listen(port, () => {
-  db.sequelize.sync({ alter: true });
+  //require("../database/models/index.js").sequelize.sync({ force: true });
 });
 server.on("error", onError);
 server.on("listening", onListening);

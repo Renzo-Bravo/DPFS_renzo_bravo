@@ -6,18 +6,18 @@
     <%- include('../partials/header') %>
 
     <main>
-      <% if (product) { %>
+      <% if (prod) { %>
       <div class="PContain">
         <div class="contain">
-          <h2 class="titleProd"><%= product.brand %>  <%= product.model %></h2>
+          <h2 class="titleProd"><%= prod.brand_id%>  <%= prod.model %></h2>
           <div class="product">
-            <img src="/images/products/<%= product.image %>" alt="product" />
+            <img src="/images/products/<%= prod.image %>" alt="product" />
           </div>
 
           <div class="infoPriceAndUser">
             <div class="price">
               <div class="lastPrice">$1000</div>
-              <div class="nowPrice"><%= product.price %></div>
+              <div class="nowPrice"><%= prod.price %></div>
             </div>
 
             <div class="infoUser">
@@ -29,10 +29,10 @@
           <section class="btn">
             <a href="#">Comprar</a>
             <a href="/products/cart">Agregar al carrito</a>
-            <a href="/products/edition/<%= product.id %>">Editar</a>
+            <a href="/products/edition/<%= prod.id %>">Editar</a>
           </section>
           <form
-            action="/products/delete/<%= product.id %>?_method=DELETE"
+            action="/products/delete/<%= prod.id %>?_method=DELETE"
             method="post"
             class="btn"
           >
@@ -46,23 +46,23 @@
             <table>
               <tr class="tr1">
                 <td>Marca</td>
-                <th><%= product.brand %></th>
+                <th><%= prod.brand_id %></th>
               </tr>
               <tr>
                 <td>Dedicado a</td>
-                <th><%= product.category %></th>
+                <th><%= prod.category_id %></th>
               </tr>
               <tr class="tr1">
                 <td>Talle</td>
-                <th><%= product.size %></th>
+                <th><%= prod.size_id %></th>
               </tr>
               <tr>
                 <td>Género</td>
-                <th><%= product.gender %></th>
+                <th><%= prod.gender_id %></th>
               </tr>
               <tr class="tr1">
                 <td>Color</td>
-                <th><%= product.color %></th>
+                <th><%= prod.color_id%></th>
               </tr>
             </table>
           </section>

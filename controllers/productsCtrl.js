@@ -20,106 +20,114 @@ const productsCtrl = {
     res.render("products/productCart");
   },
 
-  createForm: function (req, res, next) {
-    const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"));
-    const colors = JSON.parse(fs.readFileSync(colorsPath, "utf-8"));
-    const size = JSON.parse(fs.readFileSync(sizePath, "utf-8"));
-    const gender = JSON.parse(fs.readFileSync(genderPath, "utf-8"));
-    res.render("products/formCreate", { categories, colors, gender, size });
+  createForm: async (req, res) => {
+    const categories = await db.Category.findAll();
+    const brands = await db.Brand.findAll();
+    const colors = await db.Colors.findAll();
+    const size = await db.Size.findAll();
+    const gender = await db.Genders.findAll();
+    res.render("products/formCreate", {
+      brands,
+      categories,
+      colors,
+      gender,
+      size,
+    });
   },
 
-  createProduct: function (req, res, next) {
-    const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
+  createProduct: async function (req, res, next) {
     const newProduct = {
-      id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
-      brand: req.body.brand,
-      category: req.body.category,
-      color: req.body.color,
+      brand_id: req.body.brand,
+      category_id: req.body.category,
+      color_id: req.body.color,
       description: req.body.description,
-      gender: req.body.gender,
+      gender_id: req.body.gender,
       model: req.body.model,
       price: req.body.price,
-      size: req.body.size,
+      size_id: req.body.size,
       image: req.file && req.file.filename ? req.file.filename : "images.png",
     };
 
-    products.push(newProduct);
-    const productsJSON = JSON.stringify(products, null, " ");
-    fs.writeFileSync(productsPath, productsJSON);
+    await db.Product.create(newProduct);
 
     res.redirect("/");
   },
 
-  detail: function (req, res, next) {
-    const id = req.params.id;
-    const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
-    const prod = products.find((product) => {
-      return product.id == id;
-    });
-    res.render("products/productDetail", { product: prod });
+  detail: async function (req, res, next) {
+    try {
+      const prod = await db.Product.findByPk(req.params.id);
+      res.render("products/productDetail", { prod });
+    } catch (error) {
+      console.log(error);
+    }
   },
 
-  delete: function (req, res, next) {
-    const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
-
-    const delProducts = products.filter(
-      (product) => product.id != req.params.id
-    );
-
-    const productsJSON = JSON.stringify(delProducts, null, " ");
-
-    fs.writeFileSync(productsPath, productsJSON);
-
-    res.redirect("/products/list");
+  delete: async function (req, res, next) {
+    try {
+      await db.Product.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      console.log("Se elimino el producto con id", req.params.id);
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
   },
 
-  editionForm: function (req, res, next) {
-    const category = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"));
-    const colors = JSON.parse(fs.readFileSync(colorsPath, "utf-8"));
-    const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
-    const size = JSON.parse(fs.readFileSync(sizePath, "utf-8"));
-    const gender = JSON.parse(fs.readFileSync(genderPath, "utf-8"));
-    const prod = products.find((prod) => {
-      return prod.id == req.params.id;
-    });
-    res.render("products/formEdition.ejs", {
-      product: prod,
-      gender,
-      size,
-      category,
-      colors,
-    });
+  editionForm: async function (req, res) {
+    try {
+      const prod = await db.Product.findByPk(req.params.id);
+      const categories = await db.Category.findAll();
+      const colors = await db.Colors.findAll();
+      const genders = await db.Genders.findAll();
+      const size = await db.Size.findAll();
+      const brand = await db.Brand.findAll();
+      res.render("products/formEdition", {
+        prod,
+        categories,
+        colors,
+        size,
+        genders,
+        brand,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   },
 
-  updateForm: function (req, res, next) {
-    const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
+  updateForm: async function (req, res, next) {
+    try {
+      const product = await db.Product.findByPk(req.params.id);
 
-    products.forEach((product) => {
-      if (product.id == req.params.id) {
-        product.brand = req.body.brand;
-        product.category = req.body.category;
-        product.color = req.body.color;
-        product.description = req.body.description;
-        product.gender = req.body.gender;
-        product.model = req.body.model;
-        product.price = req.body.price;
-        product.size = req.body.size;
-        product.image = req.file?.filename || product.image;
-      }
-    });
+      const productUpdated = {
+        brand_id: req.body.brand,
+        name: req.body.name,
+        description: req.body.description,
+        image: req.file?.filename || product.image,
+        category_id: req.body.category,
+        color_id: req.body.colors,
+        price: req.body.price,
+        size: req.body.size,
+      };
 
-    const productsJSON = JSON.stringify(products, null, " ");
-    fs.writeFileSync(productsPath, productsJSON);
+      await db.Product.update(productUpdated, {
+        where: { id: req.params.id },
+      });
 
-    res.redirect("/products/detail/" + req.params.id);
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   list: async function (req, res) {
     try {
       const products = await db.Product.findAll();
-      res.render("products/productList.ejs", {products});
+      res.render("products/productList", { products });
     } catch (error) {
-      console.log(error => console.log(error));
+      console.log((error) => console.log(error));
     }
   },
 };

@@ -7,15 +7,15 @@
 
       <main>
         <section class="formularyEdition1">
-          <form action="/products/edition/<%= product.id %>?_method=put" method="post" class="formularyEdition"
+          <form action="/products/edition/<%= prod.id %>?_method=put" method="post" class="formularyEdition"
             enctype="multipart/form-data">
             <div class="formularyLebel">
               <label for="image">Subir imagen:</label>
             </div>
             <input type="file" id="image" name="image" accept="image/*" />
             <div>
-              <% if (product.image) { %>
-                <img id="preview" src="/images/<%= product.image %>" alt="Producto" style="width: 200px" />
+              <% if (prod.image) { %>
+                <img id="preview" src="/images/<%= prod.image %>" alt="Producto" style="width: 200px" />
                 <% } else { %>
                   <img id="preview" src="" alt="Producto" style="width: 200px" />
                   <% } %>
@@ -24,12 +24,19 @@
             <div class="formularyLebel">
               <label for="model">Modelo:</label>
             </div>
-            <input type="text" class="titleName" id="titulo" name="model" value="<%= product.model %>" />
+            <input type="text" class="titleName" id="titulo" name="model" value="<%= prod.model %>" />
+
 
             <div class="formularyLebel">
               <label for="brand">Marca:</label>
             </div>
-            <input type="text" class="titleName" id="brand" name="brand" value="<%= product.brand %>" />
+            <select id="brand" name="brand" required>
+              <% brand.forEach(brand=> { %>
+                <option value="<%= brand.id %>">
+                  <%= brand.nameBrand %>
+                </option>
+                <% }) %>
+            </select>
 
             <div class="formularyLebel">
               <label for="color">Color:</label>
@@ -37,7 +44,7 @@
 
             <select class="titleName" id="color" name="color">
               <% colors.forEach(c=> { %>
-                <option value="<%= c.color %>" <%=product.color===c.color ? "selected" : "" %>>
+                <option value="<%= c.id %>" <%=prod.id===c.id ? "selected" : "" %>>
                   <%= c.color %>
                 </option>
                 <% }) %>
@@ -48,32 +55,32 @@
             </div>
 
             <select class="titleName" id="category" name="category">
-              <% category.forEach(categ=> { %>
-                <option value="<%= categ.typeBike %>" <%=product.typeBike===categ.typeBike ? "selected" : "" %>>
+              <% categories.forEach(categ=> { %>
+                <option value="<%= categ.id %>" <%=prod.typeBike===categ.typeBike ? "selected" : "" %>>
                   <%= categ.typeBike %>
                 </option>
                 <% }) %>
             </select>
 
-             <div class="formularyLebel">
+            <div class="formularyLebel">
               <label for="size">Talle:</label>
             </div>
 
             <select class="titleName" id="size" name="size">
               <% size.forEach(s=> { %>
-                <option value="<%= s.size %>" <%=product.size===s.size ? "selected" : "" %>>
+                <option value="<%= s.size %>" <%=prod.size===s.size ? "selected" : "" %>>
                   <%= s.size %>
                 </option>
                 <% }) %>
             </select>
 
-             <div class="formularyLebel">
+            <div class="formularyLebel">
               <label for="gender">Género:</label>
             </div>
 
             <select class="titleName" id="gender" name="gender">
-              <% gender.forEach(g=> { %>
-                <option value="<%= g.gender %>" <%=product.gender===g.gender ? "selected" : "" %>>
+              <% genders.forEach(g=> { %>
+                <option value="<%= g.gender %>" <%=prod.gender===g.gender ? "selected" : "" %>>
                   <%= g.gender %>
                 </option>
                 <% }) %>
@@ -83,13 +90,13 @@
               <label for="description">Descripción:</label>
             </div>
             <textarea name="description" id="description">
-              <%= product.description %></textarea>
+              <%= prod.description %></textarea>
 
 
             <div class="formularyLebel">
               <label for="price">Precio:</label>
             </div>
-            <input type="number" id="precio" name="price" value="<%= product.price %>" />
+            <input type="number" id="precio" name="price" value="<%= prod.price %>" />
 
             <input type="submit" id="send" value="Guardar" />
           </form>
