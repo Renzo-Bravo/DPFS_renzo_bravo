@@ -1,13 +1,3 @@
-const { name } = require("ejs");
-const fs = require("fs");
-const { type } = require("os");
-const path = require("path");
-
-const categoriesPath = path.join(__dirname, "../", "data", "category.json");
-const colorsPath = path.join(__dirname, "../", "data", "colors.json");
-const productsPath = path.join(__dirname, "../", "data", "products.json");
-const sizePath = path.join(__dirname, "../", "data", "size.json");
-const genderPath = path.join(__dirname, "../", "data", "gender.json");
 const db = require("../database/models/index.js");
 
 const productsCtrl = {
@@ -16,41 +6,48 @@ const productsCtrl = {
   },
 
   cart: function (req, res, next) {
-    const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
     res.render("products/productCart");
   },
 
   createForm: async (req, res) => {
-    const categories = await db.Category.findAll();
-    const brands = await db.Brand.findAll();
-    const colors = await db.Colors.findAll();
-    const size = await db.Size.findAll();
-    const gender = await db.Genders.findAll();
-    res.render("products/formCreate", {
-      brands,
-      categories,
-      colors,
-      gender,
-      size,
-    });
+    try {
+      const categories = await db.Category.findAll();
+      const brands = await db.Brand.findAll();
+      const colors = await db.Colors.findAll();
+      const size = await db.Size.findAll();
+      const gender = await db.Genders.findAll();
+      res.render("products/formCreate", {
+        brands,
+        categories,
+        colors,
+        gender,
+        size,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   createProduct: async function (req, res, next) {
-    const newProduct = {
-      brand_id: req.body.brand,
-      category_id: req.body.category,
-      color_id: req.body.color,
-      description: req.body.description,
-      gender_id: req.body.gender,
-      model: req.body.model,
-      price: req.body.price,
-      size_id: req.body.size,
-      image: req.file && req.file.filename ? req.file.filename : "images.png",
-    };
+    try {
+      const newProduct = {
+        brand_id: req.body.brand,
+        category_id: req.body.category,
+        color_id: req.body.color,
+        description: req.body.description,
+        gender_id: req.body.gender,
+        name: req.body.name,
+        price: req.body.price,
+        size_id: req.body.size,
+        image: req.file && req.file.filename ? req.file.filename : "images.png",
+      };
 
-    await db.Product.create(newProduct);
+      await db.Product.create(newProduct);
 
-    res.redirect("/");
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   detail: async function (req, res, next) {
@@ -69,7 +66,7 @@ const productsCtrl = {
           id: req.params.id,
         },
       });
-      console.log("Se elimino el producto con id", req.params.id);
+      console.log(req.params.id);
       res.redirect("/");
     } catch (error) {
       console.log(error);
@@ -104,12 +101,13 @@ const productsCtrl = {
       const productUpdated = {
         brand_id: req.body.brand,
         name: req.body.name,
+        gender_id: req.body.gender,
         description: req.body.description,
         image: req.file?.filename || product.image,
         category_id: req.body.category,
-        color_id: req.body.colors,
+        color_id: req.body.color,
         price: req.body.price,
-        size: req.body.size,
+        size_id: req.body.size,
       };
 
       await db.Product.update(productUpdated, {

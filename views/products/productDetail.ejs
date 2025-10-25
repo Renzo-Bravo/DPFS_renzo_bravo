@@ -9,7 +9,7 @@
       <% if (prod) { %>
       <div class="PContain">
         <div class="contain">
-          <h2 class="titleProd"><%= prod.brand_id%>  <%= prod.model %></h2>
+          <h2 class="titleProd"><%= prod.brand_id%>,  <%= prod.brand_id %></h2>
           <div class="product">
             <img src="/images/products/<%= prod.image %>" alt="product" />
           </div>
@@ -96,3 +96,4 @@
     <%- include('../partials/footer') %>
   </body>
 </html>
+

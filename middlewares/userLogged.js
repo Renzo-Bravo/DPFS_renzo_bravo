@@ -1,10 +1,6 @@
-const session = require("express-session");
-const fs = require("fs");
-const path = require("path");
+const db = require("../database/models/index.js");
 
-const usersPath = path.join(__dirname, "../", "data", "users.json");
-
-function userLogged(req, res, next) {
+async function userLogged(req, res, next) {
   if (req.session && req.session.userLogged) {
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.userLogged;
@@ -12,8 +8,9 @@ function userLogged(req, res, next) {
   }
 
   if (!req.session.userLogged && req.cookies.email) {
-    const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
-    const userFound = users.find((user) => user.email == req.cookies.email);
+    const userFound = await db.Users.findOne({
+      where: { email: req.cookies.email },
+    });
     if (userFound) {
       res.locals.isLogged = true;
       req.session.userLogged = userFound;

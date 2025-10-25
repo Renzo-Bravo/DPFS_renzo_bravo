@@ -22,9 +22,9 @@
             </div>
 
             <div class="formularyLebel">
-              <label for="model">Modelo:</label>
+              <label for="name">Modelo:</label>
             </div>
-            <input type="text" class="titleName" id="titulo" name="model" value="<%= prod.model %>" />
+            <input type="text" class="titleName" id="titulo" name="name" value="<%= prod.name %>" />
 
 
             <div class="formularyLebel">
@@ -32,20 +32,20 @@
             </div>
             <select id="brand" name="brand" required>
               <% brand.forEach(brand=> { %>
-                <option value="<%= brand.id %>">
+                <option value="<%= brand.id %>" <%=prod.brand_id===brand.id ? "selected" : "" %>>
                   <%= brand.nameBrand %>
                 </option>
                 <% }) %>
             </select>
-
+            
             <div class="formularyLebel">
               <label for="color">Color:</label>
             </div>
 
             <select class="titleName" id="color" name="color">
-              <% colors.forEach(c=> { %>
-                <option value="<%= c.id %>" <%=prod.id===c.id ? "selected" : "" %>>
-                  <%= c.color %>
+              <% colors.forEach(color=> { %>
+                <option value="<%= color.id %>" <%=prod.color_id===color.id ? "selected" : "" %>>
+                  <%= color.color %>
                 </option>
                 <% }) %>
             </select>
@@ -56,7 +56,7 @@
 
             <select class="titleName" id="category" name="category">
               <% categories.forEach(categ=> { %>
-                <option value="<%= categ.id %>" <%=prod.typeBike===categ.typeBike ? "selected" : "" %>>
+                <option value="<%= categ.id %>" <%=prod.category_id===categ.id ? "selected" : "" %>>
                   <%= categ.typeBike %>
                 </option>
                 <% }) %>
@@ -67,9 +67,9 @@
             </div>
 
             <select class="titleName" id="size" name="size">
-              <% size.forEach(s=> { %>
-                <option value="<%= s.size %>" <%=prod.size===s.size ? "selected" : "" %>>
-                  <%= s.size %>
+              <% size.forEach(size=> { %>
+                <option value="<%= size.id %>" <%=prod.size_id===size.id ? "selected" : "" %>>
+                  <%= size.size %>
                 </option>
                 <% }) %>
             </select>
@@ -79,9 +79,9 @@
             </div>
 
             <select class="titleName" id="gender" name="gender">
-              <% genders.forEach(g=> { %>
-                <option value="<%= g.gender %>" <%=prod.gender===g.gender ? "selected" : "" %>>
-                  <%= g.gender %>
+              <% genders.forEach(gend=> { %>
+                <option value="<%= gend.id %>" <%=prod.gender_id===gend.id ? "selected" : "" %>>
+                  <%= gend.gender %>
                 </option>
                 <% }) %>
             </select>
