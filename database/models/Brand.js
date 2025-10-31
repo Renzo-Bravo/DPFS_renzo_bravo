@@ -8,12 +8,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     nameBrand: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     image: {
       type: DataTypes.TEXT,
-      allowNull: false,
     },
   };
 

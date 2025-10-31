@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     size: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(20),
+      allowNull: false,
     },
   };
 

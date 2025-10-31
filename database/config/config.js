@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "rrbb2298",
-    "database": "movi_db",
+    "database": "movi_go_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

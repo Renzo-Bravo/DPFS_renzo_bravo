@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Users";
+  const alias = "User";
 
   const cols = {
     id: {
@@ -8,23 +8,27 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     name: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(150),
       allowNull: false,
     },
     surname: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(150),
       allowNull: false,
     },
-    date: {
+    created_at: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    rol: {
-      type: DataTypes.STRING(10),
+    rol_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
+      references: {
+        model: "roles",
+        key: "id",
+      },
     },
     email: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(150),
       allowNull: false,
       isUnique: true,
       validate: {
@@ -32,19 +36,19 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     password: {
-      type: DataTypes.STRING(200),
+      type: DataTypes.STRING(150),
       allowNull: false,
     },
     gender_id: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       references: {
-        model: "gender",
+        model: "genders",
         key: "id",
       },
     },
     image: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING(255),
     },
   };
 
@@ -53,11 +57,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   };
 
-  const Users = sequelize.define(alias, cols, config);
+  const User = sequelize.define(alias, cols, config);
 
-  Users.associate = (models) => {
-    Users.belongsTo(models.Genders, { foreignKey: "gender_id", as: "gender" });
+  User.associate = (models) => {
+    User.belongsTo(models.Gender, { foreignKey: "gender_id", as: "genero" });
+    User.belongsTo(models.Rol, { foreignKey: "rol_id", as: "Rango" });
   };
 
-  return Users;
+  return User;
 };

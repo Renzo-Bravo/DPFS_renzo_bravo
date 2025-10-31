@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert(
@@ -9,8 +7,8 @@ module.exports = {
           id: 1,
           name: "Renzo",
           surname: "Bravo Gomez",
-          date: '2002-12-10',
-          rol: "2",
+          created_at: '2002-12-10',
+          rol_id: 1,
           email: "admin@gmail.com",
           password: "567",
           gender_id: 2,
@@ -20,8 +18,8 @@ module.exports = {
           id: 2,
           name: "Renzo",
           surname: "Bravo Gomez",
-          date: "2025-10-04",
-          rol: "admin",
+          created_at: "2025-10-04",
+          rol_id: 2,
           email: "admin1@gmail.com",
           password:
             "$2b$10$4NniHGCHUL/u8cFec6oGaecvXnI6Z3JJeOx3mp5T02gKcTGMQzHvC",
@@ -32,8 +30,8 @@ module.exports = {
           id: 3,
           name: "Test",
           surname: "Test",
-          date: "2002-12-10",
-          rol: "test",
+          created_at: "2002-12-10",
+          rol_id: 3,
           email: "admin2@gmail.com",
           password:
             "$2b$10$fL/mMtNp/TPGFLnYHc5QSuzzYDi4ma0jYTq/vZ/Oyq7WNZziTxF3W",

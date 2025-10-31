@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     typeBike: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(50),
+      alllowNull: false,
     },
   };
 

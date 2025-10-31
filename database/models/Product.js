@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     gender_id: {
       type: DataTypes.INTEGER.UNSIGNED,
       references: {
-        model: "gender",
+        model: "genders",
         key: "id",
       },
     },
@@ -49,15 +49,22 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
     },
     model: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(250),
     },
     price: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     image: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING(255),
       allowNull: false,
+    },
+    sale_id: {
+      type: DataTypes.TINYINT,
+      references: {
+        model: "sales",
+        key: "id",
+      },
     },
   };
 
@@ -70,10 +77,14 @@ module.exports = (sequelize, DataTypes) => {
 
   Product.associate = (models) => {
     Product.belongsTo(models.Brand, { foreignKey: "brand_id", as: "marca" });
-    Product.belongsTo(models.Category, { foreignKey: "category_id", as: "categoria" });
-    Product.belongsTo(models.Colors, { foreignKey: "color_id", as: "colores" });
-    Product.belongsTo(models.Genders, { foreignKey: "gender_id", as: "genero" });
+    Product.belongsTo(models.Category, {
+      foreignKey: "category_id",
+      as: "categoria",
+    });
+    Product.belongsTo(models.Color, { foreignKey: "color_id", as: "colores" });
+    Product.belongsTo(models.Gender, { foreignKey: "gender_id", as: "genero" });
     Product.belongsTo(models.Size, { foreignKey: "size_id", as: "talle" });
+    Product.belongsTo(models.Sale, { foreignKey: "sale_id", as: "oferta" });
   };
 
   return Product;
