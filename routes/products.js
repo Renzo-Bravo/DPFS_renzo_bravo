@@ -5,10 +5,7 @@ const logged = require("../middlewares/logged.js");
 
 var router = express.Router();
 
-/* Gey accesories page. */
-router.get("/accesories", productsCtrl.accesories);
-
-/* Gey Cart page. */
+/* Get Cart page. */
 router.get("/cart", logged,productsCtrl.cart);
 
 /*Get Form create*/

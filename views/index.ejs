@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
+<%- include('partials/head') %>
 
   <body>
     <%- include('partials/header') %>
 
-    <main>
-      <article class="carrousel">
-        <img src="images/carrousel1.jpeg" alt="carrousel" />
-      </article>
+      <main>
+        <article class="carrousel">
+          <img src="images/carrousel1.jpeg" alt="carrousel" />
+        </article>
 
-      <section class="cards">
-        <h2>Marcas</h2>
-        <% brands.forEach(brand => { %>
-        <div class="card">
-          <div class="brandImg">
-            <% if (brand.image) { %>
-            <img
-              src="images/brands/<%= brand.image %>"
-              alt="<%= brand.nameBrand %>"
-            />
-            <% } else { %>
-            <img src="images/brands/defaultBrand.png" alt="Default Image" />
-            <% } %>
-          </div>
-          <div class="titleProduct"><%= brand.nameBrand %></div>
-        </div>
-        <% }) %>
-      </section>
-    </main>
+        <section class="cards">
+          <h2>Ofertas</h2>
+          <% products.forEach(prod=> { %>
+            <div class="card">
+              <div class="brandImg">
+                <% if (prod.image) { %>
+                  <img src="images/products/<%= prod.image %>" alt="<%= prod.model %>" />
+                  <% } else { %>
+                    <img src="images/products/images.png" alt="Default Image" />
+                    <% } %>
+              </div>
+              <div class="titleProduct">
+                <%= prod.model %>
+              </div>
+            </div>
+            <% }) %>
 
-    <%- include('partials/footer') %>
+              <h2>Marcas</h2>
+              <% brands.forEach(brand=> { %>
+                <div class="card">
+                  <div class="brandImg">
+                    <% if (brand.image) { %>
+                      <img src="images/brands/<%= brand.image %>" alt="<%= brand.nameBrand %>" />
+                      <% } else { %>
+                        <img src="images/brands/defaultBrand.png" alt="Default Image" />
+                        <% } %>
+                  </div>
+                  <div class="titleProduct">
+                    <%= brand.nameBrand %>
+                  </div>
+                </div>
+                <% }) %>
+        </section>
+      </main>
+
+      <%- include('partials/footer') %>
   </body>
+
 </html>

@@ -1,10 +1,6 @@
 const db = require("../database/models/index.js");
 
 const productsCtrl = {
-  accesories: function (req, res, next) {
-    res.render("products/accesories");
-  },
-
   cart: function (req, res, next) {
     res.render("products/productCart");
   },
