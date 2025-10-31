@@ -13,9 +13,9 @@ const productsCtrl = {
     try {
       const categories = await db.Category.findAll();
       const brands = await db.Brand.findAll();
-      const colors = await db.Colors.findAll();
+      const colors = await db.Color.findAll();
       const size = await db.Size.findAll();
-      const gender = await db.Genders.findAll();
+      const gender = await db.Gender.findAll();
       res.render("products/formCreate", {
         brands,
         categories,

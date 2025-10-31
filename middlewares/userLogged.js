@@ -8,7 +8,7 @@ async function userLogged(req, res, next) {
   }
 
   if (!req.session.userLogged && req.cookies.email) {
-    const userFound = await db.Users.findOne({
+    const userFound = await db.User.findOne({
       where: { email: req.cookies.email },
     });
     if (userFound) {
