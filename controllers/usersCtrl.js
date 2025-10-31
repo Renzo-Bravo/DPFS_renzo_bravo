@@ -12,11 +12,16 @@ const usersCtrl = {
     res.redirect("/");
   },
 
-  register: function (req, res, next) {
-    res.render("users/register");
+  register: async (req, res) => {
+    try {
+      const rol = await db.Rol.findAll();
+      const genders = await db.Gender.findAll();
+      res.render("users/register", { rol, genders });
+    } catch (error) {
+      console.log(error);
+    }
   },
   profile: function (req, res, next) {
-    const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
     res.render("users/profile", { user: req.session.userLogged });
   },
   processLogin: async (req, res) => {
@@ -51,11 +56,12 @@ const usersCtrl = {
         checkbox: req.body.checkbox,
         date: req.body.date,
         email: req.body.email,
-        gender: req.body.gender,
         name: req.body.name,
-        rol: req.body.rol,
         surname: req.body.surname,
         password: bcrypt.hashSync(req.body.password, 10),
+        created_at: new Date(),
+        rol_id: req.body.rol_id,
+        gender_id: req.body.gender_id,
         image:
           req.file && req.file.filename ? req.file.filename : "profile.jpg",
       };

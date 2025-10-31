@@ -3,8 +3,7 @@
   <%- include('../partials/headUsers') %>
 
   <body>
-    <%- include('../partials/headerLogAndReg', { link: 'login', texto: 'Login'
-    }) %>
+    <%- include('../partials/headerLogAndReg', { link: 'login', texto: 'Login' }) %>
 
     <main>
       <div class="logo">
@@ -12,8 +11,8 @@
       </div>
 
       <section class="formulary">
-
         <form action="/users/register" method="post" enctype="multipart/form-data">
+
           <label for="name">Nombre:</label>
           <input
             type="text"
@@ -22,7 +21,7 @@
             placeholder="Nombre"
             required
           />
-          
+
           <label for="image">Foto de perfil:</label>
           <input type="file" class="image" id="image" name="profile" accept="image/*" />
 
@@ -38,20 +37,20 @@
           <label for="date">Fecha de nacimiento:</label>
           <input type="date" id="date" name="date" required />
 
-          <label for="gender">Género</label>
-          <select name="gender" id="select">
+          <label for="gender_id">Género</label>
+          <select name="gender_id" id="gender_id" required>
             <option value="">Seleccionar</option>
-            <option value="otro">Otro</option>
-            <option value="male">Masculino</option>
-            <option value="female">Femenino</option>
+            <% genders.forEach(gend => { %>
+              <option value="<%= gend.id %>"><%= gend.gender %></option>
+            <% }) %>
           </select>
-          
-          <label for="rol">Rol</label>
-          <select name="rol" id="select">
+
+          <label for="rol_id">Rol</label>
+          <select name="rol_id" id="rol_id" required>
             <option value="">Seleccionar</option>
-            <option value="admin">Admin</option>
-            <option value="test">Test</option>
-            <option value="user">Usuario</option>
+            <% rol.forEach(roles => { %>
+              <option value="<%= roles.id %>"><%= roles.rol %></option>
+            <% }) %>
           </select>
 
           <label for="email">Correo electrónico:</label>
@@ -74,9 +73,9 @@
 
           <div class="check">
             <input type="checkbox" id="checkbox" name="checkbox" required />
-            <label for="checkbox" class="conditions"
-              >Aceptar terminos y condiciones</label
-            >
+            <label for="checkbox" class="conditions">
+              Aceptar términos y condiciones
+            </label>
           </div>
 
           <div class="sub">
@@ -87,3 +86,4 @@
     </main>
   </body>
 </html>
+
