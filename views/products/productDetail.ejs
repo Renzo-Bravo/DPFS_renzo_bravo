@@ -1,99 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
+<%- include('../partials/head') %>
 
   <body>
     <%- include('../partials/header') %>
 
-    <main>
-      <% if (prod) { %>
-      <div class="PContain">
-        <div class="contain">
-          <h2 class="titleProd"><%= prod.brand_id%>,  <%= prod.brand_id %></h2>
-          <div class="product">
-            <img src="/images/products/<%= prod.image %>" alt="product" />
-          </div>
+      <main>
+        <% if (prod) { %>
+          <div class="PContain">
+            <div class="contain">
+              <h2 class="titleProd">
+                <%= prod.brand_as ? prod.brand_as.nameBrand : 'Marca desconocida' %> -
+                  <%= prod.model %>
+              </h2>
 
-          <div class="infoPriceAndUser">
-            <div class="price">
-              <div class="lastPrice">$1000</div>
-              <div class="nowPrice"><%= prod.price %></div>
-            </div>
-
-            <div class="infoUser">
-              <div class="user">Vendido por:<strong>User</strong></div>
-              <div class="clasification">⭐⭐⭐⭐⭐</div>
-            </div>
-          </div>
-
-          <section class="btn">
-            <a href="#">Comprar</a>
-            <a href="/products/cart">Agregar al carrito</a>
-            <a href="/products/edition/<%= prod.id %>">Editar</a>
-          </section>
-          <form
-            action="/products/delete/<%= prod.id %>?_method=DELETE"
-            method="post"
-            class="btn"
-          >
-            <button type="submit" class="btn">Eliminar producto</button>
-          </form>
-        </div>
-
-        <div class="contain2">
-          <section class="infoProduct">
-            <h2>Descripción</h2>
-            <table>
-              <tr class="tr1">
-                <td>Marca</td>
-                <th><%= prod.brand_id %></th>
-              </tr>
-              <tr>
-                <td>Dedicado a</td>
-                <th><%= prod.category_id %></th>
-              </tr>
-              <tr class="tr1">
-                <td>Talle</td>
-                <th><%= prod.size_id %></th>
-              </tr>
-              <tr>
-                <td>Género</td>
-                <th><%= prod.gender_id %></th>
-              </tr>
-              <tr class="tr1">
-                <td>Color</td>
-                <th><%= prod.color_id%></th>
-              </tr>
-            </table>
-          </section>
-
-          <section class="comentaryUsers">
-            <h2>Reseñas</h2>
-            <div class="userComent">
-              <span class="imageProfile">
-                <img src="/images/images.png" alt="imageProfile" />
-              </span>
-              <div class="userName">
-                <div class="name">User (Hace 17 horas)</div>
-                <div class="clasificationD">⭐⭐⭐⭐⭐</div>
+              <div class="product">
+                <img src="/images/products/<%= prod.image %>" alt="<%= prod.model %>" />
               </div>
+
+              <div class="infoPriceAndUser">
+                <div class="price">
+                  <div class="lastPrice">$1000</div>
+                  <div class="nowPrice">$<%= prod.price %>
+                  </div>
+                </div>
+
+                <div class="infoUser">
+                  <div class="user">Vendido por: <strong>User</strong></div>
+                  <div class="clasification">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+
+              <section class="btn">
+                <a href="#">Comprar</a>
+                <a href="/products/cart">Agregar al carrito</a>
+                <a href="/products/edition/<%= prod.id %>">Editar</a>
+              </section>
+
+              <form action="/products/delete/<%= prod.id %>?_method=DELETE" method="post" class="btn">
+                <button type="submit" class="btn">Eliminar producto</button>
+              </form>
             </div>
 
-            <div class="publicComentary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-              aliquid ducimus atque. A recusandae voluptates facere mollitia
-              voluptate temporibus ullam hic, reiciendis officia neque dolore
-              vitae incidunt voluptatum distinctio exercitationem.
-            </div>
-          </section>
-        </div>
-      </div>
-      <% } else { %>
-      <p>No se encontró el producto.</p>
-      <% } %>
-    </main>
+            <div class="contain2">
+              <section class="infoProduct">
+                <h2>Descripción</h2>
+                <table>
+                  <tr class="tr1">
+                    <td>Marca</td>
+                    <th>
+                      <%= prod.brand_as ? prod.brand_as.nameBrand : prod.brand_id %>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>Categoría</td>
+                    <th>
+                      <%= prod.category_as ? prod.category_as.typeBike : prod.category_id %>
+                    </th>
+                  </tr>
+                  <tr class="tr1">
+                    <td>Talle</td>
+                    <th>
+                      <%= prod.size_as ? prod.size_as.size : prod.size_id %>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>Género</td>
+                    <th>
+                      <%= prod.gender_as ? prod.gender_as.gender : prod.gender_id %>
+                    </th>
+                  </tr>
+                  <tr class="tr1">
+                    <td>Color</td>
+                    <th>
+                      <%= prod.color_as ? prod.color_as.color : prod.color_id %>
+                    </th>
+                  </tr>
+                </table>
+              </section>
 
-    <%- include('../partials/footer') %>
+              <section class="comentaryUsers">
+                <h2>Reseñas</h2>
+                <div class="userComent">
+                  <span class="imageProfile">
+                    <img src="/images/images.png" alt="imageProfile" />
+                  </span>
+                  <div class="userName">
+                    <div class="name">User (Hace 17 horas)</div>
+                    <div class="clasificationD">⭐⭐⭐⭐⭐</div>
+                  </div>
+                </div>
+
+                <div class="publicComentary">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  aliquid ducimus atque. A recusandae voluptates facere mollitia
+                  voluptate temporibus ullam hic, reiciendis officia neque dolore
+                  vitae incidunt voluptatum distinctio exercitationem.
+                </div>
+              </section>
+            </div>
+          </div>
+          <% } else { %>
+            <p>No se encontró el producto.</p>
+            <% } %>
+      </main>
+
+      <%- include('../partials/footer') %>
   </body>
-</html>
 
+</html>

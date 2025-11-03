@@ -48,7 +48,16 @@ const productsCtrl = {
 
   detail: async function (req, res, next) {
     try {
-      const prod = await db.Product.findByPk(req.params.id);
+      const prod = await db.Product.findByPk(req.params.id, {
+        include: [
+          "color_as",
+          "brand_as",
+          "category_as",
+          "gender_as",
+          "size_as",
+        ],
+      });
+      console.log(prod);
       res.render("products/productDetail", { prod });
     } catch (error) {
       console.log(error);
@@ -118,7 +127,7 @@ const productsCtrl = {
 
   list: async function (req, res) {
     try {
-      const products = await db.Product.findAll();
+      const products = await db.Product.findAll({ include: "color_as" });
       res.render("products/productList", { products });
     } catch (error) {
       console.log((error) => console.log(error));
