@@ -9,25 +9,7 @@ const indexCtrl = {
     console.log(JSON.stringify(products, null, 2));
 
     res.render("index", { brands, products });
-  },
-
-  brands: async function (req, res) {
-    try {
-      const brands = await db.Brand.findAll();
-      res.json(brands);
-    } catch (error) {
-      console.log(error);
-    }
-  },
-
-  products: async function (req, res) {
-    try {
-      const products = await db.Product.findAll();
-      res.json(products);
-    } catch (error) {
-      console.log(error);
-    }
-  },
+  }
 };
 
 module.exports = indexCtrl;

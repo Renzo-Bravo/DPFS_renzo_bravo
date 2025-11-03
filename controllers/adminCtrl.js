@@ -15,7 +15,7 @@ const adminCtrl = {
 
       res.redirect("/");
     } catch (error) {
-      console.log("No se pudo crear la nueva categoria", error);
+      console.log(error);
     }
   },
 
@@ -29,7 +29,7 @@ const adminCtrl = {
 
       res.redirect("/");
     } catch (error) {
-      console.log("No se pudo crear el color", error);
+      console.log(error);
     }
   },
 };

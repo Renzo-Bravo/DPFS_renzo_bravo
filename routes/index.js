@@ -4,6 +4,4 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", indexCtrl.index);
-router.get("/test", indexCtrl.products);
-router.get("/brands", indexCtrl.brands)
 module.exports = router;

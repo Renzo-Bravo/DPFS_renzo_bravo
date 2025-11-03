@@ -18,7 +18,7 @@
             <% products.forEach(prod=> { %>
               <% if (prod.sale_as && prod.sale_as.id==1) { %>
                 <div class="card-sale">
-                  <a href="/">
+                  <a href="/products/detail/<%= prod.id %>">
                     <div class="brandImg-sale">
                       <% if (prod.image) { %>
                         <img src="images/products/<%= prod.image %>" alt="<%= prod.model %>" />
