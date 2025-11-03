@@ -57,5 +57,5 @@ El diseño busca ser sencillo y adaptable, priorizando la velocidad de carga y l
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/Renzo-Bravo/DPFS_Grupo4_Renzo_Bravo.git
+   git clone https://github.com/Renzo-Bravo/DPFS_renzo_bravo.git
 
