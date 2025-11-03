@@ -7,6 +7,7 @@ White
 
 main .carrousel img {
   border-radius: 12px;
+  margin-bottom: 5%;
 }
 
 /*main .cards .card{
@@ -32,6 +33,10 @@ main .cards .card .contentCard img{
 }
 */
 
+.cards .sales {
+  display: flex;
+}
+
 main .cards .card {
   background-color: white;
   color: black;
@@ -43,6 +48,37 @@ main .cards .card {
   width: 100%;
   box-sizing: border-box;
   border-radius: 12px;
+}
+
+.card-sale {
+  background-color: #252525;
+  border: solid 1px yellow;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 5% 4% 5% 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card-sale:hover {
+  transform: translateY(-5px);
+}
+
+
+.card-sale .titleProduct h4{
+  text-decoration: none;
+  color: yellow;
+}
+
+.card-sale .brandImg-sale {
+  width: 100%;
+}
+
+.card-sale .brandImg-sale img {
+  border-radius: 10px 10px 0 0;
+  border-bottom: yellow 1px solid;
 }
 
 main .cards .card .brandImg {

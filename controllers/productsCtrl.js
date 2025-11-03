@@ -12,12 +12,14 @@ const productsCtrl = {
       const colors = await db.Color.findAll();
       const size = await db.Size.findAll();
       const gender = await db.Gender.findAll();
+      const sale = await db.Sale.findAll();
       res.render("products/formCreate", {
         brands,
         categories,
         colors,
         gender,
         size,
+        sale,
       });
     } catch (error) {
       console.log(error);
@@ -32,10 +34,11 @@ const productsCtrl = {
         color_id: req.body.color,
         description: req.body.description,
         gender_id: req.body.gender,
-        name: req.body.name,
+        model: req.body.name,
         price: req.body.price,
         size_id: req.body.size,
         image: req.file && req.file.filename ? req.file.filename : "images.png",
+        sale_id: req.body.sale,
       };
 
       await db.Product.create(newProduct);
@@ -82,8 +85,8 @@ const productsCtrl = {
     try {
       const prod = await db.Product.findByPk(req.params.id);
       const categories = await db.Category.findAll();
-      const colors = await db.Colors.findAll();
-      const genders = await db.Genders.findAll();
+      const colors = await db.Color.findAll();
+      const genders = await db.Gender.findAll();
       const size = await db.Size.findAll();
       const brand = await db.Brand.findAll();
       res.render("products/formEdition", {
@@ -127,10 +130,12 @@ const productsCtrl = {
 
   list: async function (req, res) {
     try {
-      const products = await db.Product.findAll({ include: "color_as" });
+      const products = await db.Product.findAll({
+        include: ["color_as"],
+      });
       res.render("products/productList", { products });
     } catch (error) {
-      console.log((error) => console.log(error));
+      console.log(error);
     }
   },
 };
