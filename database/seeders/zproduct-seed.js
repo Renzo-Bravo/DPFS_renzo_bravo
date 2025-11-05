@@ -66,7 +66,7 @@ module.exports = {
           color_id: 5,
           category_id: 4,
           gender_id: 2,
-          size_id: 2,
+          size_id: 1,
         },
         {
           id: 6,
