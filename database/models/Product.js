@@ -69,7 +69,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const config = {
-    tableName: "products",
+    tableName: "Zproducts",
     timestamps: false,
   };
 
