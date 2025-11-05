@@ -11,7 +11,7 @@ module.exports = {
           price: 2200,
           image: "image-1759030748535.jpeg",
           sale_id: 1,
-          color_id: 1,
+          color_id: 3,
           category_id: 2,
           gender_id: 2,
           size_id: 1,
