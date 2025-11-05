@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     sale_id: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER.UNSIGNED,
       references: {
         model: "sales",
         key: "id",
@@ -69,7 +69,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const config = {
-    tableName: "Zproducts",
+    tableName: "zproducts",
     timestamps: false,
   };
 
