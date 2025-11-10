@@ -6,7 +6,6 @@ const indexCtrl = {
     const products = await db.Product.findAll({
       include: ["sale_as"],
     });
-    console.log(JSON.stringify(products, null, 2));
 
     res.render("index", { brands, products });
   }

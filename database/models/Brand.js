@@ -8,8 +8,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     nameBrand: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(20),
       allowNull: false,
+      validate: {
+        isAlphanumeric: true,
+        len: {
+          args: [1, 50],
+          msg: "EL nombre que desea ingresar no debe tener más de 20 caracteres",
+        },
+      },
     },
     image: {
       type: DataTypes.TEXT,

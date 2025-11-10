@@ -8,11 +8,25 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     color: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(15),
       allowNull: false,
+      validate: {
+        isAlpha: true,
+        len: {
+          args: [1, 15],
+          msg: "El color que desea ingresar no debe sobrepasar los 15 caracteres",
+        },
+      },
     },
     code: {
-      type: DataTypes.STRING(150),
+      type: DataTypes.STRING(15),
+      validate: {
+        isAlphanumeric: true,
+        len: {
+          args: [1, 20],
+          msg: "El codigo que desea ingresar no debe tener más de 15 caracteres",
+        },
+      },
     },
   };
 

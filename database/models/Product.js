@@ -47,13 +47,46 @@ module.exports = (sequelize, DataTypes) => {
     },
     description: {
       type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Debe ingresar una descripción del producto",
+        },
+        len: {
+          args: [10, 500],
+          msg: "La descripción debe tener entre 10 y 500 caracteres",
+        },
+      },
     },
     model: {
-      type: DataTypes.STRING(250),
+      type: DataTypes.STRING(50),
+      validate: {
+        isAlphanumeric: true,
+        len: {
+          args: [1, 50],
+          msg: "El modelo que desea ingrear no debe sobrepasar los 50 caracteres",
+        },
+      },
     },
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "El precio no puede estar vacío",
+        },
+        isNumeric: {
+          msg: "El precio debe ser un número válido",
+        },
+        min: {
+          args: [1],
+          msg: "El precio debe ser mayor a 0",
+        },
+        max: {
+          args: [999999],
+          msg: "El precio no puede superar los 999.999",
+        },
+      },
     },
     image: {
       type: DataTypes.STRING(255),
@@ -82,7 +115,10 @@ module.exports = (sequelize, DataTypes) => {
       as: "category_as",
     });
     Product.belongsTo(models.Color, { foreignKey: "color_id", as: "color_as" });
-    Product.belongsTo(models.Gender, { foreignKey: "gender_id", as: "gender_as" });
+    Product.belongsTo(models.Gender, {
+      foreignKey: "gender_id",
+      as: "gender_as",
+    });
     Product.belongsTo(models.Size, { foreignKey: "size_id", as: "size_as" });
     Product.belongsTo(models.Sale, { foreignKey: "sale_id", as: "sale_as" });
   };

@@ -43,7 +43,7 @@ const usersCtrl = {
           }
           return res.redirect("/users/profile");
         } else {
-          return res.render("NO ENCONTRADO");
+          return res.render("Usuario no encontrado");
         }
       }
     } catch (error) {
@@ -74,3 +74,5 @@ const usersCtrl = {
 };
 
 module.exports = usersCtrl;
+
+

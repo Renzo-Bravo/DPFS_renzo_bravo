@@ -60,7 +60,9 @@ const productsCtrl = {
           "size_as",
         ],
       });
-      console.log(prod);
+
+      if (!prod) return res.status(404).send("Producto no encontrado");
+
       res.render("products/productDetail", { prod });
     } catch (error) {
       console.log(error);
@@ -74,7 +76,6 @@ const productsCtrl = {
           id: req.params.id,
         },
       });
-      console.log(req.params.id);
       res.redirect("/");
     } catch (error) {
       console.log(error);
@@ -89,6 +90,9 @@ const productsCtrl = {
       const genders = await db.Gender.findAll();
       const size = await db.Size.findAll();
       const brand = await db.Brand.findAll();
+
+      if (!prod) return res.status(404).send("Producto no encontrado");
+
       res.render("products/formEdition", {
         prod,
         categories,
@@ -105,7 +109,7 @@ const productsCtrl = {
   updateForm: async function (req, res, next) {
     try {
       const product = await db.Product.findByPk(req.params.id);
-
+      if (!prod) return res.status(404).send("Producto no encontrado");
       const productUpdated = {
         brand_id: req.body.brand,
         name: req.body.name,

@@ -8,8 +8,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     typeBike: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(20),
       alllowNull: false,
+      validate: {
+        isAlpha: true,
+        len: {
+          args: [1, 20],
+          msg: "El tipo de bicicleta pueder tener 20 caracteres",
+        },
+      },
     },
   };
 

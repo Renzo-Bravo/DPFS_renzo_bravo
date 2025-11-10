@@ -10,14 +10,37 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING(150),
       allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Debe ingresar su nombre",
+        },
+        len: {
+          args: [4, 20],
+          msg: "El nombre debe tener entre 4 y 12 caracteres",
+        },
+      },
     },
     surname: {
       type: DataTypes.STRING(150),
       allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Debe ingresar su apellido",
+        },
+        len: {
+          args: [1, 15],
+          msg: "El apellido debe tener entre 1 y 15 caracteres",
+        },
+      },
     },
     created_at: {
       type: DataTypes.DATE,
       allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Debe ingresar la fecha de creación de la cuenta",
+        },
+      },
     },
     rol_id: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -30,14 +53,36 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING(150),
       allowNull: false,
-      isUnique: true,
+      unique: true,
       validate: {
-        isEmail: true,
+        notEmpty: {
+          msg: "Debe ingresar el email",
+        },
+        isEmail: {
+          msg: "Debe ingresar un formato de email válido",
+        },
+        len: {
+          args: [5, 150],
+          msg: "El correo debe tener entre 5 y 150 caracteres",
+        },
       },
     },
     password: {
-      type: DataTypes.STRING(150),
+      type: DataTypes.STRING(250),
       allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "La contraseña no puede estar vacía",
+        },
+        len: {
+          args: [8, 250],
+          msg: "La contraseña debe tener entre 8 y 32 caracteres",
+        },
+        is: {
+          args: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/,
+          msg: "La contraseña debe tener al menos una mayúscula, una minúscula y un número",
+        },
+      },
     },
     gender_id: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -61,7 +106,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = (models) => {
     User.belongsTo(models.Gender, { foreignKey: "gender_id", as: "genero" });
-    User.belongsTo(models.Rol, { foreignKey: "rol_id", as: "Rango" });
+    User.belongsTo(models.Rol, { foreignKey: "rol_id", as: "rango" });
   };
 
   return User;

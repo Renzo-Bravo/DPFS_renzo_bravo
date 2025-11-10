@@ -8,8 +8,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     size: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(3),
       allowNull: false,
+      validate: {
+        len : {
+          args : [1, 3],
+          msg: "el talle puede contener hasta 3 caracteres"
+        }
+      }
     },
   };
 

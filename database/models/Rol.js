@@ -8,8 +8,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     rol: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(10),
       allowNull: false,
+      valdate: {
+        isAlpha: true,
+        len: {
+          args: [1, 10],
+          msg: "El campo de roles tiene un maximo de 10 caracteres",
+        },
+      },
     },
   };
 
