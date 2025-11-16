@@ -50,6 +50,7 @@ const usersCtrl = {
       console.log(error);
     }
   },
+  
   processRegister: async (req, res) => {
     try {
       const newUser = {

@@ -8,28 +8,28 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     name: {
-      type: DataTypes.STRING(150),
+      type: DataTypes.STRING(10),
       allowNull: false,
       validate: {
         notEmpty: {
           msg: "Debe ingresar su nombre",
         },
         len: {
-          args: [4, 20],
-          msg: "El nombre debe tener entre 4 y 12 caracteres",
+          args: [2, 10],
+          msg: "El nombre debe tener entre 2 y 10 caracteres",
         },
       },
     },
     surname: {
-      type: DataTypes.STRING(150),
+      type: DataTypes.STRING(10),
       allowNull: false,
       validate: {
         notEmpty: {
           msg: "Debe ingresar su apellido",
         },
         len: {
-          args: [1, 15],
-          msg: "El apellido debe tener entre 1 y 15 caracteres",
+          args: [2, 10],
+          msg: "El apellido debe tener entre 2 y 10 caracteres",
         },
       },
     },

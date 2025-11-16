@@ -92,6 +92,11 @@ main .formulary .sub #input {
   font-weight: bold;
 }
 
+.error {
+  color: red;
+  font-size: 14px;
+}
+
 @media screen and (min-width: 1024px) {
   main {
     display: flex;
