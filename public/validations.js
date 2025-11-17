@@ -22,8 +22,8 @@ window.addEventListener("DOMContentLoaded", () => {
       validate: (value) =>
         /\S+@\S+\.\S+/.test(value) &&
         value.trim().length >= 5 &&
-        value.trim().length <= 150,
-      message: "Debe ingresar un email válido entre 5 y 150 caracteres.",
+        value.trim().length <= 20,
+      message: "Debe ingresar un email válido.",
     },
     password: {
       input: document.querySelector("#password"),
@@ -50,13 +50,5 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     if (errors) e.preventDefault();
-  });
-
-  Object.values(fields).forEach((field) => {
-    field.input.addEventListener("input", () => {
-      if (field.validate(field.input.value)) {
-        field.error.textContent = "";
-      }
-    });
   });
 });

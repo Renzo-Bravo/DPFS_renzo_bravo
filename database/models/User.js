@@ -62,8 +62,8 @@ module.exports = (sequelize, DataTypes) => {
           msg: "Debe ingresar un formato de email válido",
         },
         len: {
-          args: [5, 150],
-          msg: "El correo debe tener entre 5 y 150 caracteres",
+          args: [5, 20],
+          msg: "El correo debe tener entre 5 y 20 caracteres",
         },
       },
     },
