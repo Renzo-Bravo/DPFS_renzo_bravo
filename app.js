@@ -11,6 +11,7 @@ const adminRouter = require("./routes/admin");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const productRouter = require("./routes/products");
+const apiProductRouter = require("./routes/api/products");
 
 const db = require("./database/models");
 db.sequelize.sync();
@@ -34,6 +35,7 @@ app.use(userLogged);
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("assets"));
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -42,6 +44,7 @@ app.use("/", indexRouter);
 app.use("/admin", adminRouter);
 app.use("/users", usersRouter);
 app.use("/products", productRouter);
+app.use("/api/products", apiProductRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
