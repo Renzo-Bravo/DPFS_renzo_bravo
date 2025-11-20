@@ -1,0 +1,38 @@
+[
+ {
+  "id": 2,
+  "brand": "Alpine",
+  "category": "Ruta-Carretera",
+  "color": "Azul",
+  "description": "sssssssssssssssssssssss",
+  "gender": "Masculino",
+  "model": "RS2025",
+  "price": "22",
+  "size": "M",
+  "image": "image-1759030748535.jpeg"
+ },
+ {
+  "id": 3,
+  "brand": "Nissan",
+  "category": "Ruta-Carretera",
+  "color": "Amarillo",
+  "description": "idk",
+  "gender": "Masculino",
+  "model": "370z",
+  "price": "22222",
+  "size": "M",
+  "image": "image-1761177986587.jpg"
+ },
+ {
+  "id": 4,
+  "brand": "Fiat",
+  "category": "Hibridas",
+  "color": "Azul",
+  "description": "123111111111111",
+  "gender": "Femenino",
+  "model": "RS202522",
+  "price": "31231231232",
+  "size": "S",
+  "image": "image-1761178042274.jpeg"
+ }
+]

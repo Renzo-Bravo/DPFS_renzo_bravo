@@ -1,0 +1,147 @@
+const db = require("../database/models/index.js");
+
+const productsCtrl = {
+  cart: function (req, res, next) {
+    res.render("products/productCart");
+  },
+
+  createForm: async (req, res) => {
+    try {
+      const categories = await db.Category.findAll();
+      const brands = await db.Brand.findAll();
+      const colors = await db.Color.findAll();
+      const size = await db.Size.findAll();
+      const gender = await db.Gender.findAll();
+      const sale = await db.Sale.findAll();
+      res.render("products/formCreate", {
+        brands,
+        categories,
+        colors,
+        gender,
+        size,
+        sale,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  createProduct: async function (req, res, next) {
+    try {
+      const newProduct = {
+        brand_id: req.body.brand,
+        category_id: req.body.category,
+        color_id: req.body.color,
+        description: req.body.description,
+        gender_id: req.body.gender,
+        model: req.body.name,
+        price: req.body.price,
+        size_id: req.body.size,
+        image: req.file && req.file.filename ? req.file.filename : "images.png",
+        sale_id: req.body.sale,
+      };
+
+      await db.Product.create(newProduct);
+
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  detail: async function (req, res, next) {
+    try {
+      const prod = await db.Product.findByPk(req.params.id, {
+        include: [
+          "color_as",
+          "brand_as",
+          "category_as",
+          "gender_as",
+          "size_as",
+        ],
+      });
+
+      if (!prod) return res.status(404).send("Producto no encontrado");
+
+      res.render("products/productDetail", { prod });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  delete: async function (req, res, next) {
+    try {
+      await db.Product.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  editionForm: async function (req, res) {
+    try {
+      const prod = await db.Product.findByPk(req.params.id);
+      const categories = await db.Category.findAll();
+      const colors = await db.Color.findAll();
+      const genders = await db.Gender.findAll();
+      const size = await db.Size.findAll();
+      const brand = await db.Brand.findAll();
+
+      if (!prod) return res.status(404).send("Producto no encontrado");
+
+      res.render("products/formEdition", {
+        prod,
+        categories,
+        colors,
+        size,
+        genders,
+        brand,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  updateForm: async function (req, res, next) {
+    try {
+      const product = await db.Product.findByPk(req.params.id);
+      if (!prod) return res.status(404).send("Producto no encontrado");
+      const productUpdated = {
+        brand_id: req.body.brand,
+        name: req.body.name,
+        gender_id: req.body.gender,
+        description: req.body.description,
+        image: req.file?.filename || product.image,
+        category_id: req.body.category,
+        color_id: req.body.color,
+        price: req.body.price,
+        size_id: req.body.size,
+      };
+
+      await db.Product.update(productUpdated, {
+        where: { id: req.params.id },
+      });
+
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  list: async function (req, res) {
+    try {
+      const products = await db.Product.findAll({
+        include: ["color_as"],
+      });
+      res.render("products/productList", { products });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+};
+
+module.exports = productsCtrl;

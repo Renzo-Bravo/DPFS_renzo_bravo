@@ -1,0 +1,37 @@
+[
+ {
+  "id": 1,
+  "name": "Renzo",
+  "surname": "Bravo Gomez",
+  "date": "2025-10-28",
+  "rol": "2",
+  "email": "admin@gmail.com",
+  "password": "567",
+  "checkbox": "on",
+  "image": "profileprofileImg-1759375138231.webp"
+ },
+ {
+  "id": 2,
+  "checkbox": "on",
+  "date": "2025-10-04",
+  "email": "admin1@gmail.com",
+  "gender": "male",
+  "name": "Renzo",
+  "rol": "admin",
+  "surname": "Bravo Gomez",
+  "password": "$2b$10$4NniHGCHUL/u8cFec6oGaecvXnI6Z3JJeOx3mp5T02gKcTGMQzHvC",
+  "image": "profileprofileImg-1759434931146.jpg"
+ },
+ {
+  "id": 3,
+  "checkbox": "on",
+  "date": "2002-12-10",
+  "email": "admin2@gmail.com",
+  "gender": "male",
+  "name": "Test",
+  "rol": "test",
+  "surname": "Test",
+  "password": "$2b$10$fL/mMtNp/TPGFLnYHc5QSuzzYDi4ma0jYTq/vZ/Oyq7WNZziTxF3W",
+  "image": "profile.jpg"
+ }
+]
