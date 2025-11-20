@@ -1,0 +1,148 @@
+/*
+#D32F2F RED
+#212121 BLACK SMOKE
+#9E9E9E GRAY
+White
+*/
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main .logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main .logo img {
+  width: 70%;
+}
+
+main .formulary form {
+  width: 100%;
+  padding: 4% 0 8% 0;
+  margin-bottom: 10%;
+  display: flex;
+  border-radius: 12px;
+  align-items: center;
+  flex-direction: column;
+  background-color: #353535;
+}
+
+main .formulary form Label {
+  color: white;
+  margin: 4% 0;
+}
+
+main .formulary form #name,
+#surname,
+#date,
+#select,
+#email,
+#password,
+#checkbox,
+#input {
+  width: 90%;
+  padding: 4%;
+  border: none;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+main .formulary a,
+.check {
+  width: 90%;
+  margin: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+main .formulary .check #checkbox {
+  width: 20px;
+  margin: 0;
+}
+
+main .formulary .check .conditions {
+  width: 80%;
+}
+
+.check input[type="checkbox"] {
+  transform: scale(1.5);
+  accent-color: #ffcc00;
+  cursor: pointer;
+}
+
+main .formulary .sub {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .formulary .sub #input {
+  display: flex;
+  justify-content: center;
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .logo {
+    width: 50%;
+  }
+
+  main .logo img {
+    width: 60%;
+  }
+
+  main .formulary {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  main .formulary form {
+    width: 60%;
+    margin: 0;
+    background-color: #353535;
+  }
+
+  main .formulary form Label {
+    color: white;
+    margin: 4% 0;
+  }
+
+  main .formulary form #name,
+  #surname,
+  #date,
+  #select,
+  #email,
+  #password,
+  #checkbox,
+  #input {
+    padding: 4%;
+  }
+
+  main .formulary .sub #input:hover {
+    transition: transform 0.4s ease;
+    transform: scale(1.1);
+  }
+}
