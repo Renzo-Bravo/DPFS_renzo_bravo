@@ -26,6 +26,7 @@ El diseño busca ser sencillo y adaptable, priorizando la velocidad de carga y l
 - Node.js  
 - Express  
 - MySQL  
+- React
 
 ---
 
