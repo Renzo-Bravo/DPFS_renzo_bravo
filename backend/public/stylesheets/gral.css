@@ -1,0 +1,18 @@
+/*
+#D32F2F RED
+#212121 BLACK SMOKE
+#9E9E9E GRAY
+White
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #252525;
+  font-family: sans-serif;
+  color: white;
+}
+
+main {
+  padding: 0 4%;
+}
