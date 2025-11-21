@@ -1,4 +1,5 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";    
 import Footer from "./components/Partials/Footer.jsx";
 import Header from "./components/Partials/Header.jsx";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
@@ -15,10 +16,12 @@ function App() {
         <Sidebar />
 
         <div className="mainContainer">
-          <List />
-          <Detail />
-          <AllUsers />
-          <LastUser />
+          <Routes>
+            <Route path="/" element={<List />} />
+            <Route path="/products/:id" element={<Detail />} />
+            <Route path="/users" element={<AllUsers />} />
+            <Route path="/last-user" element={<LastUser />} />
+          </Routes>
         </div>
       </div>
       <Footer />

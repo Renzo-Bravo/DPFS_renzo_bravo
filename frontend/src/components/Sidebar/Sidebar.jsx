@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 export default function Sidebar() {
@@ -6,16 +7,13 @@ export default function Sidebar() {
     <div className="menuToggle">
       <ul className="SideBar">
         <li>
-          <a href="/">Categorias</a>
+          <Link to="/">Productos</Link>
         </li>
         <li>
-          <a href="/">Productos</a>
+          <Link to="/users">Usuarios</Link>
         </li>
         <li>
-          <a href="/">Usuarios</a>
-        </li>
-        <li>
-          <a href="/">Ultimo Usuario</a>
+          <Link to="/last-user">Ultimo Usuario</Link>
         </li>
       </ul>
     </div>

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Detail.css";
+import { useParams } from "react-router-dom";     
+
 
 export default function Detail() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const URL_API = "http://localhost:3000";
-
+  const {id} = useParams();
   useEffect(() => {
-    fetch(`${URL_API}/api/products/detail/2`)
+    fetch(`${URL_API}/api/products/detail/${id}`)
       .then((res) => res.json())
       .then((response) => {
         //console.log(response);
