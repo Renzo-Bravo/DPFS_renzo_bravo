@@ -4,6 +4,10 @@ const upload = require("../../middlewares/multerProfile.js");
 
 var router = express.Router();
 
+router.get('/', apiUsersCtrl. allUsers);
+
+router.get('/last-user', apiUsersCtrl. lastUser);
+
 router.post("/login", apiUsersCtrl.login);
 
 router.post("/register", upload.single("profile"), apiUsersCtrl.register);

@@ -49,20 +49,20 @@ app.use("/api/admin", adminApiRouter);
 app.use("/api/products", apiProductRouter);
 app.use("/api/users", apiUserRouter);
 
-// catch 404 and forward to error handler
+// catch 404
 app.use(function (req, res, next) {
-  next(createError(404));
+  res.status(404).json({
+    error: "Ruta no encontrada",
+    status: 404,
+  });
 });
 
 // error handler
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render("error");
+  res.status(err.status || 500).json({
+    error: err.message,
+    status: err.status || 500,
+  });
 });
 
 module.exports = app;
