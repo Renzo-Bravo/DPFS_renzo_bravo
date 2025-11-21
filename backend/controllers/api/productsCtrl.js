@@ -71,7 +71,6 @@ const productsCtrl = {
         return res.status(404).json({ error: "No se encontró el producto a eliminar" });
       }
 
-      // 2. Respuesta exitosa (200 OK)
       res.status(200).json({ msg: "Producto eliminado exitosamente" });
     } catch (error) {
       console.error(error);
