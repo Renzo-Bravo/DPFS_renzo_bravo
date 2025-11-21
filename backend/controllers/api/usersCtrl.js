@@ -24,7 +24,7 @@ const apiUsersCtrl = {
         });
       }
 
-      return res.json({
+      return res.status(200).json({
         ok: true,
         message: "Login correcto",
         user: {
@@ -38,32 +38,59 @@ const apiUsersCtrl = {
         },
       });
     } catch (error) {
-      console.error(error);
+      console.error("Error en el login:", error);
+      return res.status(500).json({
+        ok: false,
+        message: "Error interno del servidor durante el inicio de sesión.",
+        details: error.message,
+      });
     }
   },
 
   register: async (req, res) => {
     try {
+      const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+      
       const newUser = await db.User.create({
         checkbox: req.body.checkbox,
         date: req.body.date,
         email: req.body.email,
         name: req.body.name,
         surname: req.body.surname,
-        password: bcrypt.hashSync(req.body.password, 10),
+        password: hashedPassword,
         created_at: new Date(),
         rol_id: req.body.rol_id,
         gender_id: req.body.gender_id,
         image: req.file?.filename || "profile.jpg",
       });
 
+      const userResponse = newUser.toJSON();
+      delete userResponse.password;
+
       return res.status(201).json({
         ok: true,
-        message: "Usuario registrado",
-        user: newUser,
+        message: "Usuario registrado exitosamente",
+        user: userResponse,
       });
     } catch (error) {
-      console.error(error);
+      console.error("Error en el registro:", error);
+      
+      let statusCode = 500;
+      let errorMessage = "Error interno del servidor durante el registro.";
+      
+      if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError') {
+          statusCode = 400; // Bad Request
+          errorMessage = "Error de validación: Por favor, revisa los datos proporcionados.";
+          if (error.fields && error.fields.email) {
+            errorMessage = "El correo electrónico ya está registrado.";
+          }
+      }
+
+      return res.status(statusCode).json({
+        ok: false,
+        message: errorMessage,
+        details: error.message,
+      });
     }
   },
 
@@ -78,19 +105,24 @@ const apiUsersCtrl = {
         });
       }
 
-      return res.json({
+      return res.status(200).json({
         ok: true,
         user,
       });
     } catch (error) {
-      console.error(error);
+      console.error("Error al obtener el perfil:", error);
+      return res.status(500).json({
+        ok: false,
+        message: "Error interno del servidor al obtener el perfil.",
+        details: error.message,
+      });
     }
   },
 
   logout: (req, res) => {
-    return res.json({
+    return res.status(200).json({
       ok: true,
-      message: "es una API sin sesiones no se guarda estados",
+      message: "Sesión cerrada.",
     });
   },
 };
