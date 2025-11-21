@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main>
+      <section class="containList">
+        <% products.forEach(prod => { %>
+        <article class="cardList">
+          <a href="/products/detail/<%= prod.id %>" class="cardL">
+            <img src="/images/products/<%= prod.image %>" alt="Ejemplo" />
+            <div class="cardDescription">
+              <p><%= prod.brand %></p>
+              <p><%= prod.model %></p>
+              <p><%= prod.price %></p>
+            </div>
+            <div class="btnCardList">
+              <a class="btnCard" href="#">Comprar</a>
+              <a class="btnCard" href="/products/detail/<%= prod.id %>">Ver</a>
+            </div>
+          </a>
+        </article>
+        <% }) %>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

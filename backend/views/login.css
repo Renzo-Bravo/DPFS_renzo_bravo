@@ -1,0 +1,95 @@
+/*
+#D32F2F RED
+#212121 BLACK SMOKE
+#9E9E9E GRAY
+White
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid #D32F2F 4px;
+}
+
+header img{
+    width: 30%;
+}
+
+main{
+    padding: 8%;
+}
+
+main .imgMed{
+    display: none;
+}
+
+main .formularyLogin{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 4% 0 4%;
+    background-color: lightgray;
+    border-radius: 12px;
+}
+
+main .formularyLogin .formularyL{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    padding: 4%;
+    margin:  8% 0 8%;
+}
+
+main .formularyLogin .formularyL .textLabel{
+    margin: 3% 0 1%;
+}
+
+main .formularyLogin .formularyL, a{
+    margin: 4% 0 4%;
+    color: black;
+}
+
+main .formularyLogin .formularyL .sub{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .formularyLogin .formularyL .sub #input{
+    width: 99%;
+    margin: 1%;
+    padding: 4%;
+    border-radius: 12px;
+    border: none;
+}
+
+#email, #password{
+    width: 90%;
+    margin: 1%;
+    padding: 4%;
+    border-radius: 12px;
+    border: none;
+}
+
+footer{
+    border-top: solid #D32F2F 4px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img{
+    width: 30%;
+}
+
