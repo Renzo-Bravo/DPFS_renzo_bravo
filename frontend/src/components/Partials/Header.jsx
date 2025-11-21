@@ -4,7 +4,6 @@ import MoviGoLogo from '../../assets/MoviGo.png';
 
 export default function Header() {
   return (
-    <div>
       <header>
         <div className="navbar">
           <i className="bi bi-list"></i>
@@ -23,6 +22,5 @@ export default function Header() {
           </div>
         </div>
       </header>
-    </div>
   );
 }

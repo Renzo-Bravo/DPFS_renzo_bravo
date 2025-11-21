@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './App.css'
 import './components/Partials/Header.jsx'
-import './components/Main.jsx'
 import './components/Partials/Footer.jsx'
 import App from './App.jsx'
 

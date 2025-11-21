@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Card from "./Card";
-import "./List.css";
+import "./Detail.css";
 
-export default function List() {
-  const [products, setProducts] = useState([]);
+export default function Detail() {
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const URL_API = "http://localhost:3000";
 
   useEffect(() => {
-    fetch(`${URL_API}/api/products/list`)
+    fetch(`${URL_API}/api/products/detail/2`)
       .then((res) => res.json())
       .then((response) => {
         //console.log(response);
-        setProducts(response);
+        setProduct(response);
         setLoading(false);
       })
       .catch((error) => console.error(error));
@@ -22,11 +21,15 @@ export default function List() {
 
   return (
     <div>
-      <h2>Listado de productos</h2>
+      <h2>{product.model}</h2>
 
       <div className="products-list">
         {!loading ? (
-          products.map((product) => <Card key={product.id} product={product} />)
+          <div className="product-card">
+            <img src={`${URL_API}/images/products/${product.image}`} alt="" />
+            <h3>{product.model}</h3>
+            <p>Precio: ${product.price}</p>
+          </div>
         ) : (
           <p>Cargando...</p>
         )}

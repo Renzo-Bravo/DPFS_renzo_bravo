@@ -1,9 +1,9 @@
 .SideBar {
     list-style: none; 
-    margin: 0;
+    margin: 0 20px 0 0;
     padding: 0;
     width: 200px; 
-    background-color: #333; 
+    background-color: lightgray; 
     height: 100vh; 
     display: flex;
     flex-direction: column;
@@ -12,13 +12,12 @@
 
 .SideBar li {
     padding: 15px 20px; 
-    border-bottom: 1px solid #444; 
     cursor: pointer;
 }
 
 .SideBar li a {
     text-decoration: none; 
-    color: #f4f4f4; 
+    color: black; 
     display: block; 
     font-size: 16px;
     font-weight: 500;
@@ -26,9 +25,9 @@
 }
 
 .SideBar li:hover {
-    background-color: red; 
+    background-color: black; 
 }
 
 .SideBar li:hover a {
-    color: #fff; 
+    color: white; 
 }
