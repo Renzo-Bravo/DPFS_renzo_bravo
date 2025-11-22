@@ -1,5 +1,4 @@
 import "./App.css";
-// 1. IMPORTAR Navigate
 import { Routes, Route, Navigate } from "react-router-dom"; 
 import Footer from "./components/Partials/Footer.jsx";
 import Header from "./components/Partials/Header.jsx";

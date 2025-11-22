@@ -1,0 +1,125 @@
+.bodyLoginForm {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+}
+
+.login-form-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5%;
+}
+
+.form-title {
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-form label {
+  font-weight: bold;
+  color: black;
+  font-size: 0.95em;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  padding: 12px 15px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form input[type="email"]::placeholder,
+.login-form input[type="password"]::placeholder {
+  color: gray;
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+  border-color: gray;
+  box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.2);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: lightgreen;
+}
+
+.checkbox-group .checkbox-label {
+  font-weight: normal;
+  color: black;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.forgot-password-link {
+  text-align: right;
+  color: black;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-top: -10px;
+}
+
+.forgot-password-link:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.submit-button {
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: lightgreen;
+  color: green;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
